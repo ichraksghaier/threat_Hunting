@@ -1,0 +1,5375 @@
+[{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a20"
+  },
+  "Table Name": "AADSignInEventsBeta",
+  "Description": "Microsoft Entra interactive and non-interactive sign-ins",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "ApplicationId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the application"
+    },
+    {
+      "Column Name": "LogonType",
+      "Data Type": "string",
+      "Description": "Type of logon session, specifically interactive, remote interactive (RDP), network, batch, and service"
+    },
+    {
+      "Column Name": "ErrorCode",
+      "Data Type": "int",
+      "Description": "Contains the error code if a sign-in error occurs. To find a description of a specific error code, visit https://aka.ms/AADsigninsErrorCodes."
+    },
+    {
+      "Column Name": "CorrelationId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the sign-in event"
+    },
+    {
+      "Column Name": "SessionId",
+      "Data Type": "string",
+      "Description": "Unique number assigned to a user by a website's server for the duration of the visit or session"
+    },
+    {
+      "Column Name": "AccountDisplayName",
+      "Data Type": "string",
+      "Description": "Name displayed in the address book entry for the account user. This is usually a combination of the given name, middle initial, and surname of the user."
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "IsExternalUser",
+      "Data Type": "int",
+      "Description": "Indicates if the user that signed in is external. Possible values: -1 (not set), 0 (not external), 1 (external)."
+    },
+    {
+      "Column Name": "IsGuestUser",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the user that signed in is a guest in the tenant"
+    },
+    {
+      "Column Name": "AlternateSignInName",
+      "Data Type": "string",
+      "Description": "On-premises user principal name (UPN) of the user signing in to Microsoft Entra ID"
+    },
+    {
+      "Column Name": "LastPasswordChangeTimestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the user that signed in last changed their password"
+    },
+    {
+      "Column Name": "ResourceDisplayName",
+      "Data Type": "string",
+      "Description": "Display name of the resource accessed. The display name can contain any character."
+    },
+    {
+      "Column Name": "ResourceId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the resource accessed"
+    },
+    {
+      "Column Name": "ResourceTenantId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the tenant of the resource accessed"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "AadDeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. Indicates specific operating systems, including variations within the same family, such as Windows 11, Windows 10, and Windows 7."
+    },
+    {
+      "Column Name": "DeviceTrustType",
+      "Data Type": "string",
+      "Description": "Indicates the trust type of the device that signed in. For managed device scenarios only. Possible values are Workplace, AzureAd, and ServerAd."
+    },
+    {
+      "Column Name": "IsManaged",
+      "Data Type": "int",
+      "Description": "Indicates whether the device that initiated the sign-in is a managed device (1) or not a managed device (0)"
+    },
+    {
+      "Column Name": "IsCompliant",
+      "Data Type": "int",
+      "Description": "Indicates whether the device that initiated the sign-in is compliant (1) or non-compliant (0)"
+    },
+    {
+      "Column Name": "AuthenticationProcessingDetails",
+      "Data Type": "string",
+      "Description": "Details about the authentication processor"
+    },
+    {
+      "Column Name": "AuthenticationRequirement",
+      "Data Type": "string",
+      "Description": "Type of authentication required for the sign-in. Possible values: multiFactorAuthentication (MFA was required) and singleFactorAuthentication (no MFA was required)."
+    },
+    {
+      "Column Name": "TokenIssuerType",
+      "Data Type": "int",
+      "Description": "Indicates if the token issuer is Microsoft Entra ID (0) or Active Directory Federation Services (1)"
+    },
+    {
+      "Column Name": "RiskLevelAggregated",
+      "Data Type": "int",
+      "Description": "Aggregated risk level during sign-in. Possible values: 0 (aggregated risk level not set), 1 (none), 10 (low), 50 (medium), or 100 (high)."
+    },
+    {
+      "Column Name": "RiskDetails",
+      "Data Type": "int",
+      "Description": "Details about the risky state of the user that signed in"
+    },
+    {
+      "Column Name": "RiskState",
+      "Data Type": "int",
+      "Description": "Indicates risky user state. Possible values: 0 (none), 1 (confirmed safe), 2 (remediated), 3 (dismissed), 4 (at risk), or 5 (confirmed compromised)."
+    },
+    {
+      "Column Name": "UserAgent",
+      "Data Type": "string",
+      "Description": "User agent information from the web browser or other client application"
+    },
+    {
+      "Column Name": "ClientAppUsed",
+      "Data Type": "string",
+      "Description": "Indicates the client app used"
+    },
+    {
+      "Column Name": "Browser",
+      "Data Type": "string",
+      "Description": "Details about the version of the browser used to sign in"
+    },
+    {
+      "Column Name": "ConditionalAccessPolicies",
+      "Data Type": "string",
+      "Description": "Details of the conditional access policies applied to the sign-in event"
+    },
+    {
+      "Column Name": "ConditionalAccessStatus",
+      "Data Type": "int",
+      "Description": "Status of the conditional access policies applied to the sign-in. Possible values are 0 (policies applied), 1 (attempt to apply policies failed), or 2 (policies not applied)."
+    },
+    {
+      "Column Name": "IPAddress",
+      "Data Type": "string",
+      "Description": "IP address assigned to the device during communication"
+    },
+    {
+      "Column Name": "Country",
+      "Data Type": "string",
+      "Description": "Two-letter code indicating the country/region where the client IP address is geolocated"
+    },
+    {
+      "Column Name": "State",
+      "Data Type": "string",
+      "Description": "State where the sign-in occurred, if available"
+    },
+    {
+      "Column Name": "City",
+      "Data Type": "string",
+      "Description": "City where the account user is located"
+    },
+    {
+      "Column Name": "Latitude",
+      "Data Type": "string",
+      "Description": "The north to south coordinates of the sign-in location"
+    },
+    {
+      "Column Name": "Longitude",
+      "Data Type": "string",
+      "Description": "The east to west coordinates of the sign-in location"
+    },
+    {
+      "Column Name": "NetworkLocationDetails",
+      "Data Type": "string",
+      "Description": "Network location details of the authentication processor of the sign-in event"
+    },
+    {
+      "Column Name": "RequestId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the request"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the event"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a21"
+  },
+  "Table Name": "AADSpnSignInEventsBeta",
+  "Description": "Microsoft Entra service principal and managed identity sign-ins",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "ApplicationId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the application"
+    },
+    {
+      "Column Name": "IsManagedIdentity",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the sign-in was initiated by a managed identity"
+    },
+    {
+      "Column Name": "ErrorCode",
+      "Data Type": "int",
+      "Description": "Contains the error code if a sign-in error occurs. To find a description of a specific error code, visit https://aka.ms/AADsigninsErrorCodes."
+    },
+    {
+      "Column Name": "CorrelationId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the sign-in event"
+    },
+    {
+      "Column Name": "ServicePrincipalName",
+      "Data Type": "string",
+      "Description": "Name of the service principal that initiated the sign-in"
+    },
+    {
+      "Column Name": "ServicePrincipalId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the service principal that initiated the sign-in"
+    },
+    {
+      "Column Name": "ResourceDisplayName",
+      "Data Type": "string",
+      "Description": "Display name of the resource accessed. The display name can contain any character."
+    },
+    {
+      "Column Name": "ResourceId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the resource accessed"
+    },
+    {
+      "Column Name": "ResourceTenantId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the tenant of the resource accessed"
+    },
+    {
+      "Column Name": "IPAddress",
+      "Data Type": "string",
+      "Description": "IP address assigned to the endpoint and used during related network communications"
+    },
+    {
+      "Column Name": "Country",
+      "Data Type": "string",
+      "Description": "Two-letter code indicating the country where the client IP address is geolocated"
+    },
+    {
+      "Column Name": "State",
+      "Data Type": "string",
+      "Description": "State where the sign-in occurred, if available"
+    },
+    {
+      "Column Name": "City",
+      "Data Type": "string",
+      "Description": "City where the account user is located"
+    },
+    {
+      "Column Name": "Latitude",
+      "Data Type": "string",
+      "Description": "The north to south coordinates of the sign-in location"
+    },
+    {
+      "Column Name": "Longitude",
+      "Data Type": "string",
+      "Description": "The east to west coordinates of the sign-in location"
+    },
+    {
+      "Column Name": "RequestId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the request"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the event"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a22"
+  },
+  "Table Name": "AlertEvidence",
+  "Description": "Files, IP addresses, URLs, users, or devices associated with alerts",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "AlertId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the alert"
+    },
+    {
+      "Column Name": "Title",
+      "Data Type": "string",
+      "Description": "Title of the alert"
+    },
+    {
+      "Column Name": "Categories",
+      "Data Type": "string",
+      "Description": "List of categories that the information belongs to, in JSON array format"
+    },
+    {
+      "Column Name": "AttackTechniques",
+      "Data Type": "string",
+      "Description": "MITRE ATT&CK techniques associated with the activity that triggered the alert"
+    },
+    {
+      "Column Name": "ServiceSource",
+      "Data Type": "string",
+      "Description": "Product or service that provided the alert information"
+    },
+    {
+      "Column Name": "DetectionSource",
+      "Data Type": "string",
+      "Description": "Detection technology or sensor that identified the notable component or activity"
+    },
+    {
+      "Column Name": "EntityType",
+      "Data Type": "string",
+      "Description": "Type of object, such as a file, a process, a device, or a user"
+    },
+    {
+      "Column Name": "EvidenceRole",
+      "Data Type": "string",
+      "Description": "How the entity is involved in an alert, indicating whether it is impacted or is merely related"
+    },
+    {
+      "Column Name": "EvidenceDirection",
+      "Data Type": "string",
+      "Description": "Indicates whether the entity is the source or the destination of a network connection"
+    },
+    {
+      "Column Name": "FileName",
+      "Data Type": "string",
+      "Description": "Name of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the file that the recorded action was applied to. This field is usually not populatedâuse the SHA1 column when available."
+    },
+    {
+      "Column Name": "FileSize",
+      "Data Type": "long",
+      "Description": "Size of the file in bytes"
+    },
+    {
+      "Column Name": "ThreatFamily",
+      "Data Type": "string",
+      "Description": "Malware family that the suspicious or malicious file or process has been classified under"
+    },
+    {
+      "Column Name": "RemoteIP",
+      "Data Type": "string",
+      "Description": "IP address that was being connected to"
+    },
+    {
+      "Column Name": "RemoteUrl",
+      "Data Type": "string",
+      "Description": "URL or fully qualified domain name (FQDN) that was being connected to"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "LocalIP",
+      "Data Type": "string",
+      "Description": "IP address assigned to the local device used during communication"
+    },
+    {
+      "Column Name": "NetworkMessageId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email, generated by Office 365"
+    },
+    {
+      "Column Name": "EmailSubject",
+      "Data Type": "string",
+      "Description": "Subject of the email"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "ApplicationId",
+      "Data Type": "int",
+      "Description": "Unique identifier for the application"
+    },
+    {
+      "Column Name": "OAuthApplicationId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the third-party OAuth application"
+    },
+    {
+      "Column Name": "ProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to create the new process"
+    },
+    {
+      "Column Name": "RegistryKey",
+      "Data Type": "string",
+      "Description": "Registry key that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueName",
+      "Data Type": "string",
+      "Description": "Name of the registry value that the recorded action was applied to"
+    },
+    {
+    "Column Name": "AdditionalFields",
+    "Data Type": "object",
+    "Description": "Additional information about the entity or event",
+    "SubColumns": [
+      {
+        "Column Name": "AadId",
+        "Data Type": "string",
+        "Description": "Azure Active Directory ID associated with the entity"
+      },
+      {
+        "Column Name": "AccountName",
+        "Data Type": "string",
+        "Description": "Name of the account related to the entity"
+      },
+      {
+        "Column Name": "Address",
+        "Data Type": "string",
+        "Description": "IP or physical address associated with the event"
+      },
+      {
+        "Column Name": "AppId",
+        "Data Type": "string",
+        "Description": "Application ID related to the event or entity"
+      },
+      {
+        "Column Name": "CommandLine",
+        "Data Type": "string",
+        "Description": "Command line that was executed"
+      },
+      {
+        "Column Name": "CreatedTimeUtc",
+        "Data Type": "string",
+        "Description": "UTC time when the entity was created"
+      },
+      {
+        "Column Name": "CreationTimeUtc",
+        "Data Type": "string",
+        "Description": "UTC time of the creation of the event"
+      },
+      {
+        "Column Name": "DisplayName",
+        "Data Type": "string",
+        "Description": "Display name associated with the entity or event"
+      },
+      {
+        "Column Name": "EndTimeUtc",
+        "Data Type": "string",
+        "Description": "UTC time when the event ended"
+      },
+      {
+        "Column Name": "EntitySources",
+        "Data Type": "string",
+        "Description": "Sources associated with the entity"
+      },
+      {
+        "Column Name": "FirstSeen",
+        "Data Type": "string",
+        "Description": "UTC time when the entity was first seen"
+      },
+      {
+        "Column Name": "InstanceId",
+        "Data Type": "string",
+        "Description": "Unique identifier of the instance"
+      },
+      {
+        "Column Name": "InstanceName",
+        "Data Type": "string",
+        "Description": "Name of the instance"
+      },
+      {
+        "Column Name": "Location",
+        "Data Type": "string",
+        "Description": "Geographical or logical location associated with the entity"
+      },
+      {
+        "Column Name": "MailboxPrimaryAddress",
+        "Data Type": "string",
+        "Description": "Primary email address of the mailbox"
+      },
+      {
+        "Column Name": "MergeByKey",
+        "Data Type": "string",
+        "Description": "Key used to merge records"
+      },
+      {
+        "Column Name": "MergeByKeyHex",
+        "Data Type": "string",
+        "Description": "Hexadecimal representation of the merge key"
+      },
+      {
+        "Column Name": "Name",
+        "Data Type": "string",
+        "Description": "Name associated with the entity or event"
+      },
+      {
+        "Column Name": "ParentProcess",
+        "Data Type": "string",
+        "Description": "Process that spawned the current process"
+      },
+      {
+        "Column Name": "ProcessId",
+        "Data Type": "string",
+        "Description": "Identifier of the process"
+      },
+      {
+        "Column Name": "RbacScopes",
+        "Data Type": "string",
+        "Description": "Scopes defined by Role-Based Access Control"
+      },
+      {
+        "Column Name": "RequestId",
+        "Data Type": "string",
+        "Description": "Unique identifier of the request"
+      },
+      {
+        "Column Name": "RiskLevel",
+        "Data Type": "string",
+        "Description": "Level of risk associated with the event"
+      },
+      {
+        "Column Name": "Role",
+        "Data Type": "string",
+        "Description": "Role associated with the entity or event"
+      },
+      {
+        "Column Name": "SaasId",
+        "Data Type": "string",
+        "Description": "Software as a Service (SaaS) identifier"
+      },
+      {
+        "Column Name": "Source",
+        "Data Type": "string",
+        "Description": "Origin or source of the data"
+      },
+      {
+        "Column Name": "SourceEntityId",
+        "Data Type": "string",
+        "Description": "Identifier of the source entity"
+      },
+      {
+        "Column Name": "SourceEntityType",
+        "Data Type": "string",
+        "Description": "Type of the source entity"
+      },
+      {
+        "Column Name": "SourceExtendedProperties",
+        "Data Type": "string",
+        "Description": "Extended properties of the source entity"
+      },
+      {
+        "Column Name": "StartTimeUtc",
+        "Data Type": "string",
+        "Description": "UTC time when the event started"
+      },
+      {
+        "Column Name": "Type",
+        "Data Type": "string",
+        "Description": "Type of the entity or event"
+      },
+      {
+        "Column Name": "Upn",
+        "Data Type": "string",
+        "Description": "User Principal Name associated with the entity"
+      },
+      {
+        "Column Name": "Urn",
+        "Data Type": "string",
+        "Description": "Uniform Resource Name identifying the entity"
+      },
+      {
+        "Column Name": "UserSid",
+        "Data Type": "string",
+        "Description": "Security Identifier of the user"
+      },
+     ]
+    },
+    {
+      "Column Name": "Severity",
+      "Data Type": "string",
+      "Description": "Indicates the potential impact (high, medium, or low) of the threat indicator or breach activity identified by the alert"
+    },
+    {
+      "Column Name": "CloudResource",
+      "Data Type": "string",
+      "Description": "Cloud resource name"
+    },
+    {
+      "Column Name": "CloudPlatform",
+      "Data Type": "string",
+      "Description": "The cloud platform that the resource belongs to, can be Azure, Amazon Web Services, or Google Cloud Platform"
+    },
+    {
+      "Column Name": "ResourceType",
+      "Data Type": "string",
+      "Description": "Type of cloud resource"
+    },
+    {
+      "Column Name": "ResourceID",
+      "Data Type": "string",
+      "Description": "Unique identifier of the cloud resource accessed"
+    },
+    {
+      "Column Name": "SubscriptionId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the cloud service subscription"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a23"
+  },
+  "Table Name": "AlertInfo",
+  "Description": "Alerts from Microsoft Defender for Endpoint, Microsoft Defender for Office 365, Microsoft Defender for Cloud Apps, and Microsoft Defender for Identity, including severity information and threat categorization",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "AlertId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the alert"
+    },
+    {
+      "Column Name": "Title",
+      "Data Type": "string",
+      "Description": "Title of the alert"
+    },
+    {
+      "Column Name": "Category",
+      "Data Type": "string",
+      "Description": "Type of threat indicator or breach activity identified by the alert"
+    },
+    {
+      "Column Name": "Severity",
+      "Data Type": "string",
+      "Description": "Indicates the potential impact (high, medium, or low) of the threat indicator or breach activity identified by the alert"
+    },
+    {
+      "Column Name": "ServiceSource",
+      "Data Type": "string",
+      "Description": "Product or service that provided the alert information"
+    },
+    {
+      "Column Name": "DetectionSource",
+      "Data Type": "string",
+      "Description": "Detection technology or sensor that identified the notable component or activity"
+    },
+    {
+      "Column Name": "AttackTechniques",
+      "Data Type": "string",
+      "Description": "MITRE ATT&CK techniques associated with the activity that triggered the alert"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a24"
+  },
+  "Table Name": "BehaviorEntities",
+  "Description": "Behavior data types in Microsoft Defender for Cloud Apps",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "BehaviorId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the behavior"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of behavior"
+    },
+    {
+      "Column Name": "Categories",
+      "Data Type": "string",
+      "Description": "Type of threat indicator or  breach activity identified by the behavior"
+    },
+    {
+      "Column Name": "ServiceSource",
+      "Data Type": "string",
+      "Description": "Product or service that identified the behavior"
+    },
+    {
+      "Column Name": "DetectionSource",
+      "Data Type": "string",
+      "Description": "Detection technology or sensor that identified the notable component or activity"
+    },
+    {
+      "Column Name": "DataSources",
+      "Data Type": "string",
+      "Description": "Products or services that provided information for the behavior"
+    },
+    {
+      "Column Name": "EntityType",
+      "Data Type": "string",
+      "Description": "Type of object, such as a file, a process, a device, or a user"
+    },
+    {
+      "Column Name": "EntityRole",
+      "Data Type": "string",
+      "Description": "Indicates whether the entity is impacted or merely related"
+    },
+    {
+      "Column Name": "DetailedEntityRole",
+      "Data Type": "string",
+      "Description": "The roles of the entity in the behavior"
+    },
+    {
+      "Column Name": "FileName",
+      "Data Type": "string",
+      "Description": "Name of the file that the behavior applies to"
+    },
+    {
+      "Column Name": "FolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the file that the behavior applies to"
+    },
+    {
+      "Column Name": "SHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the file that the behavior applies to"
+    },
+    {
+      "Column Name": "SHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the file that the behavior applies to"
+    },
+    {
+      "Column Name": "FileSize",
+      "Data Type": "long",
+      "Description": "Size, in bytes, of the file that the behavior applies to"
+    },
+    {
+      "Column Name": "ThreatFamily",
+      "Data Type": "string",
+      "Description": "Malware family that the suspicious or malicious file or process has been classified under"
+    },
+    {
+      "Column Name": "RemoteIP",
+      "Data Type": "string",
+      "Description": "IP address that was being connected to"
+    },
+    {
+      "Column Name": "RemoteUrl",
+      "Data Type": "string",
+      "Description": "URL or fully qualified domain name (FQDN) that was being connected to"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "LocalIP",
+      "Data Type": "string",
+      "Description": "IP address assigned to the local device used during communication"
+    },
+    {
+      "Column Name": "NetworkMessageId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email, generated by Office 365"
+    },
+    {
+      "Column Name": "EmailSubject",
+      "Data Type": "string",
+      "Description": "Subject of the email"
+    },
+    {
+      "Column Name": "EmailClusterId",
+      "Data Type": "string",
+      "Description": "Identifier for the group of similar emails clustered based on heuristic analysis of their contents"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "ApplicationId",
+      "Data Type": "int",
+      "Description": "Unique identifier for the application"
+    },
+    {
+      "Column Name": "OAuthApplicationId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the third-party OAuth application"
+    },
+    {
+      "Column Name": "ProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to create the new process"
+    },
+    {
+      "Column Name": "RegistryKey",
+      "Data Type": "string",
+      "Description": "Registry key that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueName",
+      "Data Type": "string",
+      "Description": "Name of the registry value that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueData",
+      "Data Type": "string",
+      "Description": "Data of the registry value that the recorded action was applied to"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "string",
+      "Description": "Additional information about the behavior"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a25"
+  },
+  "Table Name": "BehaviorInfo",
+  "Description": "Alerts from Microsoft Defender for Cloud Apps",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "BehaviorId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the behavior"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of behavior"
+    },
+    {
+      "Column Name": "Description",
+      "Data Type": "string",
+      "Description": "Description of the behavior"
+    },
+    {
+      "Column Name": "Categories",
+      "Data Type": "string",
+      "Description": "Type of threat indicator or  breach activity identified by the behavior"
+    },
+    {
+      "Column Name": "AttackTechniques",
+      "Data Type": "string",
+      "Description": "MITRE ATT&CK techniques associated with the activity that triggered the behavior"
+    },
+    {
+      "Column Name": "ServiceSource",
+      "Data Type": "string",
+      "Description": "Product or service that identified the behavior"
+    },
+    {
+      "Column Name": "DetectionSource",
+      "Data Type": "string",
+      "Description": "Detection technology or sensor that identified the notable component or activity"
+    },
+    {
+      "Column Name": "DataSources",
+      "Data Type": "string",
+      "Description": "Products or services that provided information for the behavior"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "StartTime",
+      "Data Type": "datetime",
+      "Description": "Date and time of the first activity related to the behavior"
+    },
+    {
+      "Column Name": "EndTime",
+      "Data Type": "datetime",
+      "Description": "Date and time of the last activity related to the behavior"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "string",
+      "Description": "Additional information about the behavior"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a26"
+  },
+  "Table Name": "CloudAppEvents",
+  "Description": "Events involving accounts and objects in Office 365 and other cloud apps and services",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "ApplicationId",
+      "Data Type": "int",
+      "Description": "Unique identifier for the application"
+    },
+    {
+      "Column Name": "AppInstanceId",
+      "Data Type": "int",
+      "Description": "Unique identifier for the instance of an application. To convert this to Microsoft Defender for Cloud Apps App-connector-ID use CloudAppEvents|distinct ApplicationId,AppInstanceId,binary_or(binary_shift_left(AppInstanceId,20),ApplicationId)|order by ApplicationId,AppInstanceId"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountId",
+      "Data Type": "string",
+      "Description": "An identifier for the account as found by Microsoft Defender for Cloud Apps. Could be Microsoft Entra ID, user principal name, or other identifiers."
+    },
+    {
+      "Column Name": "AccountDisplayName",
+      "Data Type": "string",
+      "Description": "Name displayed in the address book entry for the account user. This is usually a combination of the given name, middle initial, and surname of the user."
+    },
+    {
+      "Column Name": "IsAdminOperation",
+      "Data Type": "bool",
+      "Description": "Indicates whether the activity was performed by an administrator"
+    },
+    {
+      "Column Name": "DeviceType",
+      "Data Type": "string",
+      "Description": "Type of device based on purpose and functionality, such as network device, workstation, server, mobile, gaming console, or printer"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. This column indicates specific operating systems, including variations within the same family, such as Windows 11, Windows 10 and Windows 7."
+    },
+    {
+      "Column Name": "IPAddress",
+      "Data Type": "string",
+      "Description": "IP address assigned to the device during communication"
+    },
+    {
+      "Column Name": "IsAnonymousProxy",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the IP address belongs to a known anonymous proxy"
+    },
+    {
+      "Column Name": "CountryCode",
+      "Data Type": "string",
+      "Description": "Two-letter code indicating the country where the client IP address is geolocated"
+    },
+    {
+      "Column Name": "City",
+      "Data Type": "string",
+      "Description": "City where the client IP address is geolocated"
+    },
+    {
+      "Column Name": "Isp",
+      "Data Type": "string",
+      "Description": "Internet service provider associated with the IP address"
+    },
+    {
+      "Column Name": "UserAgent",
+      "Data Type": "string",
+      "Description": "User agent information from the web browser or other client application"
+    },
+    {
+      "Column Name": "ActivityType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event"
+    },
+    {
+      "Column Name": "ActivityObjects",
+      "Data Type": "dynamic",
+      "Description": "List of objects, such as files or folders, that were involved in the recorded activity"
+    },
+    {
+      "Column Name": "ObjectName",
+      "Data Type": "string",
+      "Description": "Name of the object that the recorded action was applied to"
+    },
+    {
+      "Column Name": "ObjectType",
+      "Data Type": "string",
+      "Description": "Type of object, such as a file or a folder, that the recorded action was applied to"
+    },
+    {
+      "Column Name": "ObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the object that the recorded action was applied to"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the event"
+    },
+    {
+      "Column Name": "AccountType",
+      "Data Type": "string",
+      "Description": "Type of user account, indicating its general role and access levels, such as Regular, System, Admin, Application"
+    },
+    {
+      "Column Name": "IsExternalUser",
+      "Data Type": "boolean",
+      "Description": "Indicates whether a user inside the network doesn't belong to the organization's domain"
+    },
+    {
+      "Column Name": "IsImpersonated",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the activity was performed by one user for another (impersonated) user"
+    },
+    {
+      "Column Name": "IPTags",
+      "Data Type": "dynamic",
+      "Description": "Customer-defined information applied to specific IP addresses and IP address ranges"
+    },
+    {
+      "Column Name": "IPCategory",
+      "Data Type": "string",
+      "Description": "Additional information about the IP address"
+    },
+    {
+      "Column Name": "UserAgentTags",
+      "Data Type": "dynamic",
+      "Description": "More information provided by Microsoft Defender for Cloud Apps in a tag in the user agent field. Can have any of the following values: Native client, Outdated browser, Outdated operating system, Robot"
+    },
+    {
+      "Column Name": "RawEventData",
+      "Data Type": "dynamic",
+      "Description": "Raw event information from the source application or service in JSON format"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the cloud application event",
+      "SubColumns": [
+        {
+          "Column Name": "IsSatelliteProvider",
+          "Data Type": "boolean",
+          "Description": "Indicates whether the cloud app is a satellite provider"
+        }
+      ]
+    }, 
+    {
+      "Column Name": "LastSeenForUser",
+      "Data Type": "string",
+      "Description": "Shows how many days back the attribute was recently in use by the user in days (i.e. ISP, ActionType etc.)"
+    },
+    {
+      "Column Name": "UncommonForUser",
+      "Data Type": "string",
+      "Description": "Lists the attributes in the event that are uncommon for the user, using this data to help rule out false positives and find out anomalies"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a27"
+  },
+  "Table Name": "DeviceEvents",
+  "Description": "Multiple event types, including events triggered by security controls such as Microsoft Defender Antivirus and exploit protection",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details."
+    },
+    {
+      "Column Name": "FileName",
+      "Data Type": "string",
+      "Description": "Name of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the file that the recorded action was applied to. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "MD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FileSize",
+      "Data Type": "long",
+      "Description": "Size of the file in bytes"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account might be shown instead"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "RemoteUrl",
+      "Data Type": "string",
+      "Description": "URL or fully qualified domain name (FQDN) that was being connected to"
+    },
+    {
+      "Column Name": "RemoteDeviceName",
+      "Data Type": "string",
+      "Description": "Name of the device that performed a remote operation on the affected device. Depending on the event being reported, this name could be a fully-qualified domain name (FQDN), a NetBIOS name, or a host name without domain information."
+    },
+    {
+      "Column Name": "ProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the newly created process"
+    },
+    {
+      "Column Name": "ProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to create the new process"
+    },
+    {
+      "Column Name": "ProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time the process was created"
+    },
+    {
+      "Column Name": "ProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Indicates the type of token elevation applied to the newly created process. Possible values: TokenElevationTypeLimited (restricted), TokenElevationTypeDefault (standard), and TokenElevationTypeFull (elevated)"
+    },
+    {
+      "Column Name": "LogonId",
+      "Data Type": "long",
+      "Description": "Identifier for a logon session. This identifier is unique on the same device only between restarts."
+    },
+    {
+      "Column Name": "RegistryKey",
+      "Data Type": "string",
+      "Description": "Registry key that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueName",
+      "Data Type": "string",
+      "Description": "Name of the registry value that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueData",
+      "Data Type": "string",
+      "Description": "Data of the registry value that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RemoteIP",
+      "Data Type": "string",
+      "Description": "IP address that was being connected to"
+    },
+    {
+      "Column Name": "RemotePort",
+      "Data Type": "int",
+      "Description": "TCP port on the remote device that was being connected to"
+    },
+    {
+      "Column Name": "LocalIP",
+      "Data Type": "string",
+      "Description": "IP address assigned to the local device used during communication"
+    },
+    {
+      "Column Name": "LocalPort",
+      "Data Type": "int",
+      "Description": "TCP port on the local device used during communication"
+    },
+    {
+      "Column Name": "FileOriginUrl",
+      "Data Type": "string",
+      "Description": "URL where the file was downloaded from"
+    },
+    {
+      "Column Name": "FileOriginIP",
+      "Data Type": "string",
+      "Description": "IP address where the file was downloaded from"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the process (image file) that initiated the event. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "InitiatingProcessMD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileName",
+      "Data Type": "string",
+      "Description": "Name of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileSize",
+      "Data Type": "long",
+      "Description": "Size of the file that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to run the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the process that initiated the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountName",
+      "Data Type": "string",
+      "Description": "User name of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID UPN of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountObjectId",
+      "Data Type": "string",
+      "Description": "Microsoft Entra object ID of the user account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentFileName",
+      "Data Type": "string",
+      "Description": "Name or full path of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the parent of the process responsible for the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessLogonId",
+      "Data Type": "long",
+      "Description": "Identifier for a logon session of the process that initiated the event. This identifier is unique on the same device only between restarts."
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AppGuardContainerId",
+      "Data Type": "string",
+      "Description": "Identifier for the virtualized container used by Application Guard to isolate browser activity"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the device event",
+      "SubColumns": [
+        {
+          "Column Name": "BaseAddress",
+          "Data Type": "string",
+          "Description": "Base address related to the event"
+        },
+        {
+          "Column Name": "RegionSize",
+          "Data Type": "integer",
+          "Description": "Size of the memory region involved in the event"
+        },
+        {
+          "Column Name": "ProtectionMask",
+          "Data Type": "string",
+          "Description": "Protection mask applied to the region"
+        },
+        {
+          "Column Name": "DnsQueryString",
+          "Data Type": "string",
+          "Description": "DNS query string used in the event"
+        },
+        {
+          "Column Name": "DnsQueryResult",
+          "Data Type": "string",
+          "Description": "Result of the DNS query"
+        },
+        {
+          "Column Name": "DnsQueryType",
+          "Data Type": "string",
+          "Description": "Type of DNS query"
+        },
+        {
+          "Column Name": "ImageBase",
+          "Data Type": "string",
+          "Description": "Base address of the image loaded in memory"
+        },
+        {
+          "Column Name": "ImageName",
+          "Data Type": "string",
+          "Description": "Name of the image involved in the event"
+        },
+        {
+          "Column Name": "ImageSHA1",
+          "Data Type": "string",
+          "Description": "SHA1 hash of the image"
+        },
+        {
+          "Column Name": "UserSid",
+          "Data Type": "string",
+          "Description": "Security Identifier (SID) of the user"
+        },
+        {
+          "Column Name": "Command",
+          "Data Type": "string",
+          "Description": "Command executed during the event"
+        },
+        {
+          "Column Name": "InitiatingProcess",
+          "Data Type": "string",
+          "Description": "Process that initiated the event"
+        },
+        {
+          "Column Name": "IsRemoteMachine",
+          "Data Type": "boolean",
+          "Description": "Indicates if the machine involved is remote"
+        },
+        {
+          "Column Name": "ClientMachine",
+          "Data Type": "string",
+          "Description": "Client machine involved in the event"
+        },
+        {
+          "Column Name": "MasterKeyGUID",
+          "Data Type": "string",
+          "Description": "GUID of the master key used"
+        },
+        {
+          "Column Name": "PipeName",
+          "Data Type": "string",
+          "Description": "Name of the named pipe used in the event"
+        },
+        {
+          "Column Name": "RemoteClientsAccess",
+          "Data Type": "boolean",
+          "Description": "Indicates if remote clients have access"
+        },
+        {
+          "Column Name": "AcceptRemote",
+          "Data Type": "boolean",
+          "Description": "Indicates if remote connections are accepted"
+        },
+        {
+          "Column Name": "SessionId",
+          "Data Type": "integer",
+          "Description": "Session ID associated with the event"
+        },
+        {
+          "Column Name": "ThreadId",
+          "Data Type": "integer",
+          "Description": "Thread ID associated with the event"
+        },
+        {
+          "Column Name": "OperationType",
+          "Data Type": "string",
+          "Description": "Type of operation performed during the event"
+        },
+        {
+          "Column Name": "ReturnValue",
+          "Data Type": "integer",
+          "Description": "Return value of the operation"
+        },
+        {
+          "Column Name": "Flags",
+          "Data Type": "string",
+          "Description": "Flags set during the event"
+        },
+        {
+          "Column Name": "CallerProcessID",
+          "Data Type": "integer",
+          "Description": "Process ID of the caller process"
+        },
+        {
+          "Column Name": "NamedPipeEnd",
+          "Data Type": "string",
+          "Description": "End point of the named pipe"
+        },
+        {
+          "Column Name": "FileOperation",
+          "Data Type": "string",
+          "Description": "File operation performed during the event"
+        },
+        {
+          "Column Name": "DesiredAccess",
+          "Data Type": "string",
+          "Description": "Desired access level for the operation"
+        },
+        {
+          "Column Name": "TokenModificationProperties",
+          "Data Type": "object",
+          "Description": "Properties of the token modification performed"
+        },
+        {
+          "Column Name": "isChangedToSystemToken",
+          "Data Type": "boolean",
+          "Description": "Indicates if the token was changed to a system token"
+        },
+        {
+          "Column Name": "originalTokenIntegrityLevelName",
+          "Data Type": "string",
+          "Description": "Original integrity level name of the token"
+        },
+        {
+          "Column Name": "currentTokenIntegrityLevelName",
+          "Data Type": "string",
+          "Description": "Current integrity level name of the token"
+        },
+        {
+          "Column Name": "SystemTokenPointer",
+          "Data Type": "string",
+          "Description": "Pointer to the system token"
+        },
+        {
+          "Column Name": "OriginalTokenIntegrityLevel",
+          "Data Type": "integer",
+          "Description": "Original integrity level of the token"
+        },
+        {
+          "Column Name": "OriginalTokenPointer",
+          "Data Type": "string",
+          "Description": "Pointer to the original token"
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a28"
+  },
+  "Table Name": "DeviceFileCertificateInfo",
+  "Description": "Certificate information of signed files obtained from certificate verification events on endpoints",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "SHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "IsSigned",
+      "Data Type": "bool",
+      "Description": "Indicates whether the file is signed"
+    },
+    {
+      "Column Name": "SignatureType",
+      "Data Type": "string",
+      "Description": "Indicates whether signature information was read as embedded content in the file itself or read from an external catalog file"
+    },
+    {
+      "Column Name": "Signer",
+      "Data Type": "string",
+      "Description": "Information about the signer of the file"
+    },
+    {
+      "Column Name": "SignerHash",
+      "Data Type": "string",
+      "Description": "Unique hash value identifying the signer"
+    },
+    {
+      "Column Name": "Issuer",
+      "Data Type": "string",
+      "Description": "Information about the issuing certificate authority (CA)"
+    },
+    {
+      "Column Name": "IssuerHash",
+      "Data Type": "string",
+      "Description": "Unique hash value identifying issuing certificate authority (CA)"
+    },
+    {
+      "Column Name": "CertificateSerialNumber",
+      "Data Type": "string",
+      "Description": "Identifier for the certificate that is unique to the issuing certificate authority (CA)"
+    },
+    {
+      "Column Name": "CrlDistributionPointUrls",
+      "Data Type": "string",
+      "Description": "JSON array listing the URLs of network shares that contain certificates and certificate revocation lists (CRLs)"
+    },
+    {
+      "Column Name": "CertificateCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time the certificate was created"
+    },
+    {
+      "Column Name": "CertificateExpirationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time the certificate is set to expire"
+    },
+    {
+      "Column Name": "CertificateCountersignatureTime",
+      "Data Type": "datetime",
+      "Description": "Date and time the certificate was countersigned"
+    },
+    {
+      "Column Name": "IsTrusted",
+      "Data Type": "bool",
+      "Description": "Indicates whether the file is trusted based on the results of the WinVerifyTrust function, which checks for unknown root certificate information, invalid signatures, revoked certificates, and other questionable attributes"
+    },
+    {
+      "Column Name": "IsRootSignerMicrosoft",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the signer of the root certificate is Microsoft and if the file is included in Windows operating system"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a29"
+  },
+  "Table Name": "DeviceFileEvents",
+  "Description": "File creation, modification, and other file system events",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details."
+    },
+    {
+      "Column Name": "FileName",
+      "Data Type": "string",
+      "Description": "Name of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the file that the recorded action was applied to. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "MD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FileOriginUrl",
+      "Data Type": "string",
+      "Description": "URL where the file was downloaded from"
+    },
+    {
+      "Column Name": "FileOriginReferrerUrl",
+      "Data Type": "string",
+      "Description": "URL of the web page that links to the downloaded file"
+    },
+    {
+      "Column Name": "FileOriginIP",
+      "Data Type": "string",
+      "Description": "IP address where the file was downloaded from"
+    },
+    {
+      "Column Name": "PreviousFolderPath",
+      "Data Type": "string",
+      "Description": "Original folder containing the file before the recorded action was applied"
+    },
+    {
+      "Column Name": "PreviousFileName",
+      "Data Type": "string",
+      "Description": "Original name of the file that was renamed as a result of the action"
+    },
+    {
+      "Column Name": "FileSize",
+      "Data Type": "long",
+      "Description": "Size of the file in bytes"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountName",
+      "Data Type": "string",
+      "Description": "User name of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID UPN of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountObjectId",
+      "Data Type": "string",
+      "Description": "Microsoft Entra object ID of the user account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessMD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the process (image file) that initiated the event. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "InitiatingProcessFolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileName",
+      "Data Type": "string",
+      "Description": "Name of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileSize",
+      "Data Type": "long",
+      "Description": "Size of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to run the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the process that initiated the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessIntegrityLevel",
+      "Data Type": "string",
+      "Description": "Integrity level of the process that initiated the event. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet download. These integrity levels influence permissions to resources."
+    },
+    {
+      "Column Name": "InitiatingProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Token type indicating the presence or absence of User Access Control (UAC) privilege elevation applied to the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentFileName",
+      "Data Type": "string",
+      "Description": "Name of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the parent of the process responsible for the event was started"
+    },
+    {
+      "Column Name": "RequestProtocol",
+      "Data Type": "string",
+      "Description": "Network protocol, if applicable, used to initiate the activity: Unknown, Local, SMB, or NFS"
+    },
+    {
+      "Column Name": "RequestSourceIP",
+      "Data Type": "string",
+      "Description": "IPv4 or IPv6 address of the remote device that initiated the activity"
+    },
+    {
+      "Column Name": "RequestSourcePort",
+      "Data Type": "int",
+      "Description": "Source port on the remote device that initiated the activity"
+    },
+    {
+      "Column Name": "RequestAccountName",
+      "Data Type": "string",
+      "Description": "User name of account used to remotely initiate the activity"
+    },
+    {
+      "Column Name": "RequestAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account used to remotely initiate the activity"
+    },
+    {
+      "Column Name": "RequestAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account used to remotely initiate the activity"
+    },
+    {
+      "Column Name": "ShareName",
+      "Data Type": "string",
+      "Description": "Name of shared folder containing the file"
+    },
+    {
+      "Column Name": "SensitivityLabel",
+      "Data Type": "string",
+      "Description": "Label applied to an email, file, or other content to classify it for information protection"
+    },
+    {
+      "Column Name": "SensitivitySubLabel",
+      "Data Type": "string",
+      "Description": "Sublabel applied to an email, file, or other content to classify it for information protection; sensitivity sublabels are grouped under sensitivity labels but are treated independently"
+    },
+    {
+      "Column Name": "IsAzureInfoProtectionApplied",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the file is encrypted by Azure Information Protection"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AppGuardContainerId",
+      "Data Type": "string",
+      "Description": "Identifier for the virtualized container used by Application Guard to isolate browser activity"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the entity or event",
+      "SubColumns": [
+    {
+      "Column Name": "FileType",
+      "Data Type": "string",
+      "Description": "Type of file associated with the entity or event"
+    } ]
+    },
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a2a"
+  },
+  "Table Name": "DeviceImageLoadEvents",
+  "Description": "DLL loading events",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details."
+    },
+    {
+      "Column Name": "FileName",
+      "Data Type": "string",
+      "Description": "Name of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the file that the recorded action was applied to. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "MD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FileSize",
+      "Data Type": "long",
+      "Description": "Size of the file in bytes"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountName",
+      "Data Type": "string",
+      "Description": "User name of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID UPN of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountObjectId",
+      "Data Type": "string",
+      "Description": "Microsoft Entra object ID of the user account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessIntegrityLevel",
+      "Data Type": "string",
+      "Description": "Integrity level of the process that initiated the event. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet download. These integrity levels influence permissions to resources."
+    },
+    {
+      "Column Name": "InitiatingProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Token type indicating the presence or absence of User Access Control (UAC) privilege elevation applied to the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the process (image file) that initiated the event. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "InitiatingProcessMD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileName",
+      "Data Type": "string",
+      "Description": "Name of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileSize",
+      "Data Type": "long",
+      "Description": "Size of the file that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to run the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the process that initiated the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessFolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentFileName",
+      "Data Type": "string",
+      "Description": "Name of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the parent of the process responsible for the event was started"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AppGuardContainerId",
+      "Data Type": "string",
+      "Description": "Identifier for the virtualized container used by Application Guard to isolate browser activity"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a2b"
+  },
+  "Table Name": "DeviceInfo",
+  "Description": "Machine information, including OS information",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ClientVersion",
+      "Data Type": "string",
+      "Description": "Version of the endpoint agent or sensor running on the device"
+    },
+    {
+      "Column Name": "PublicIP",
+      "Data Type": "string",
+      "Description": "Public IP address used by the onboarded device to connect to the Microsoft  Defender for Endpoint service. This could be the IP address of the device itself, a NAT device, or a proxy."
+    },
+    {
+      "Column Name": "OSArchitecture",
+      "Data Type": "string",
+      "Description": "Architecture of the operating system running on the device"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. This indicates specific operating systems, including variations within the same family, such as Windows 11, Windows 10 and Windows 7."
+    },
+    {
+      "Column Name": "OSBuild",
+      "Data Type": "long",
+      "Description": "Build version of the operating system running on the device"
+    },
+    {
+      "Column Name": "IsAzureADJoined",
+      "Data Type": "boolean",
+      "Description": "Boolean indicator of whether device is joined to the Microsoft Entra ID"
+    },
+    {
+      "Column Name": "JoinType",
+      "Data Type": "string",
+      "Description": "The device's Microsoft Entra ID join type"
+    },
+    {
+      "Column Name": "AadDeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "LoggedOnUsers",
+      "Data Type": "string",
+      "Description": "List of all users that are logged on the device at the time of the event in JSON array format"
+    },
+    {
+      "Column Name": "RegistryDeviceTag",
+      "Data Type": "string",
+      "Description": "Device tag added through the registry"
+    },
+    {
+      "Column Name": "OSVersion",
+      "Data Type": "string",
+      "Description": "Version of the operating system running on the device"
+    },
+    {
+      "Column Name": "MachineGroup",
+      "Data Type": "string",
+      "Description": "Machine group of the device. This group is used by role-based access control to determine access to the device."
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "OnboardingStatus",
+      "Data Type": "string",
+      "Description": "Indicates whether the device is currently onboarded or not to  Microsoft Defender For Endpoint or if the device is not supported"
+    },
+    {
+	  "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the event in JSON array format",
+      "SubColumns": [
+    {
+      "Column Name": "InternetFacingLastSeen",
+      "Data Type": "string",
+      "Description": "UTC time when the device was last seen as internet-facing"
+    },
+    {
+      "Column Name": "InternetFacingReason",
+      "Data Type": "string",
+      "Description": "Reason why the device is considered internet-facing"
+    },
+    {
+      "Column Name": "InternetFacingLocalIp",
+      "Data Type": "string",
+      "Description": "Local IP address of the internet-facing device"
+    },
+    {
+      "Column Name": "InternetFacingLocalPort",
+      "Data Type": "integer",
+      "Description": "Local port used by the internet-facing device"
+    },
+    {
+      "Column Name": "InternetFacingTransportProtocol",
+      "Data Type": "string",
+      "Description": "Transport protocol used by the internet-facing device"
+    },
+    {
+      "Column Name": "InternetFacingPublicScannedIp",
+      "Data Type": "string",
+      "Description": "Public IP address scanned for the internet-facing device"
+    },
+    {
+      "Column Name": "InternetFacingPublicScannedPort",
+      "Data Type": "integer",
+      "Description": "Public port scanned for the internet-facing device"
+    }
+    ]
+    },
+    {
+      "Column Name": "DeviceCategory",
+      "Data Type": "string",
+      "Description": "Broader classification that groups certain device types under the following categories: Endpoint, Network device, IoT, Unknown"
+    },
+    {
+      "Column Name": "DeviceType",
+      "Data Type": "string",
+      "Description": "Type of device based on purpose and functionality, such as network device, workstation, server, mobile, gaming console, or printer"
+    },
+    {
+      "Column Name": "DeviceSubtype",
+      "Data Type": "string",
+      "Description": "Additional modifier for certain types of devices, for example, a mobile device can be a tablet or a smartphone; only available if device discovery finds enough information about this attribute"
+    },
+    {
+      "Column Name": "Model",
+      "Data Type": "string",
+      "Description": "Model name or number of the product from the vendor or manufacturer, only available if device discovery finds enough information about this attribute"
+    },
+    {
+      "Column Name": "Vendor",
+      "Data Type": "string",
+      "Description": "Name of the product vendor or manufacturer, only available if device discovery finds enough information about this attribute"
+    },
+    {
+      "Column Name": "OSDistribution",
+      "Data Type": "string",
+      "Description": "Distribution of the OS platform, such as Ubuntu or RedHat for Linux platforms"
+    },
+    {
+      "Column Name": "OSVersionInfo",
+      "Data Type": "string",
+      "Description": "Additional information about the OS version, such as the popular name, code name, or version number"
+    },
+    {
+      "Column Name": "MergedDeviceIds",
+      "Data Type": "string",
+      "Description": "Previous device IDs that have been assigned to the same device"
+    },
+    {
+      "Column Name": "MergedToDeviceId",
+      "Data Type": "string",
+      "Description": "The most recent device ID assigned to a device"
+    },
+    {
+      "Column Name": "IsInternetFacing",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the device is internet-facing"
+    },
+    {
+      "Column Name": "SensorHealthState",
+      "Data Type": "string",
+      "Description": "Indicates health of the device's EDR sensor, if onboarded to Microsoft Defender For Endpoint"
+    },
+    {
+      "Column Name": "IsExcluded",
+      "Data Type": "bool",
+      "Description": "Determines if the device is currently excluded from Microsoft Defender for Vulnerability Management experiences"
+    },
+    {
+      "Column Name": "ExclusionReason",
+      "Data Type": "string",
+      "Description": "Indicates the reason for device exclusion"
+    },
+    {
+      "Column Name": "ExposureLevel",
+      "Data Type": "string",
+      "Description": "The device's level of vulnerability to exploitation based on its exposure score; can be: Low, Medium, High"
+    },
+    {
+      "Column Name": "AssetValue",
+      "Data Type": "string",
+      "Description": "Priority or value assigned to the device in relation to its importance in computing the organization's exposure score; can be: Low, Normal (Default), High"
+    },
+    {
+      "Column Name": "DeviceManualTags",
+      "Data Type": "string",
+      "Description": "Device tags created manually using the portal UI or public API"
+    },
+    {
+      "Column Name": "DeviceDynamicTags",
+      "Data Type": "string",
+      "Description": "Device tags added and removed dynamically based on dynamic rules"
+    },
+    {
+      "Column Name": "ConnectivityType",
+      "Data Type": "string",
+      "Description": "Type of connectivity from the device to the cloud"
+    },
+    {
+      "Column Name": "HostDeviceId",
+      "Data Type": "string",
+      "Description": "Device ID of the device running Windows Subsystem for Linux"
+    },
+    {
+      "Column Name": "AzureResourceId",
+      "Data Type": "string",
+      "Description": "Unique identifier of the Azure resource associated with the device"
+    },
+    {
+      "Column Name": "AwsResourceName",
+      "Data Type": "string",
+      "Description": "Unique identifier specific to Amazon Web Services devices, containing the Amazon resource name"
+    },
+    {
+      "Column Name": "GcpFullResourceName",
+      "Data Type": "string",
+      "Description": "Unique identifier specific to Google Cloud Platform devices, containing a combination of zone and ID for GCP"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a2c"
+  },
+  "Table Name": "DeviceLogonEvents",
+  "Description": "Sign-ins and other authentication events on devices",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event"
+    },
+    {
+      "Column Name": "LogonType",
+      "Data Type": "string",
+      "Description": "Type of logon session, specifically: - Interactive - User physically interacts with the device using the local keyboard and screen - Remote interactive (RDP) logons - User interacts with the device remotely using Remote Desktop, Terminal Services, Remote Assistance, or other RDP clients - Network - Session initiated when the device is accessed using PsExec or when shared resources on the device, such as printers and shared folders, are accessed - Batch - Session initiated by scheduled tasks - Service - Session initiated by services as they start"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "Protocol",
+      "Data Type": "string",
+      "Description": "Protocol used during the communication"
+    },
+    {
+      "Column Name": "FailureReason",
+      "Data Type": "string",
+      "Description": "Information explaining why the recorded action failed"
+    },
+    {
+      "Column Name": "IsLocalAdmin",
+      "Data Type": "boolean",
+      "Description": "Boolean indicator of whether the user is a local administrator on the device"
+    },
+    {
+      "Column Name": "LogonId",
+      "Data Type": "long",
+      "Description": "Identifier for a logon session. This identifier is unique on the same device only between restarts."
+    },
+    {
+      "Column Name": "RemoteDeviceName",
+      "Data Type": "string",
+      "Description": "Name of the device that performed a remote operation on the affected device. Depending on the event being reported, this name could be a fully-qualified domain name (FQDN), a NetBIOS name  or a host name without domain information."
+    },
+    {
+      "Column Name": "RemoteIP",
+      "Data Type": "string",
+      "Description": "IP address of the device from which the logon attempt was performed"
+    },
+    {
+      "Column Name": "RemoteIPType",
+      "Data Type": "string",
+      "Description": "Type of IP address, for example Public, Private, Reserved, Loopback, Teredo, FourToSixMapping, and Broadcast"
+    },
+    {
+      "Column Name": "RemotePort",
+      "Data Type": "int",
+      "Description": "TCP port on the remote device that was being connected to"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountName",
+      "Data Type": "string",
+      "Description": "User name of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountObjectId",
+      "Data Type": "string",
+      "Description": "Microsoft Entra object ID of the user account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessIntegrityLevel",
+      "Data Type": "string",
+      "Description": "Integrity level of the process that initiated the event. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet download. These integrity levels influence permissions to resources."
+    },
+    {
+      "Column Name": "InitiatingProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Token type indicating the presence or absence of User Access Control (UAC) privilege elevation applied to the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 hash of the process (image file) that initiated the event. This field is usually not populated - use the SHA1 column when available."
+    },
+    {
+      "Column Name": "InitiatingProcessMD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileName",
+      "Data Type": "string",
+      "Description": "Name of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileSize",
+      "Data Type": "long",
+      "Description": "Size of the file that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to run the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the process that initiated the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessFolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentFileName",
+      "Data Type": "string",
+      "Description": "Name or full path of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the parent of the process responsible for the event was started"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AppGuardContainerId",
+      "Data Type": "string",
+      "Description": "Identifier for the virtualized container used by Application Guard to isolate browser activity"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the logon event",
+      "SubColumns": [
+        {
+          "Column Name": "Upn",
+          "Data Type": "string",
+          "Description": "User Principal Name associated with the logon event"
+        },
+        {
+          "Column Name": "IsLocalLogon",
+          "Data Type": "boolean",
+          "Description": "Indicates whether the logon event was a local logon"
+        }
+      ]
+    } ,
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a2d"
+  },
+  "Table Name": "DeviceNetworkEvents",
+  "Description": "Network connection and related events",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details."
+    },
+    {
+      "Column Name": "RemoteIP",
+      "Data Type": "string",
+      "Description": "IP address that was being connected to"
+    },
+    {
+      "Column Name": "RemotePort",
+      "Data Type": "int",
+      "Description": "TCP port on the remote device that was being connected to"
+    },
+    {
+      "Column Name": "RemoteUrl",
+      "Data Type": "string",
+      "Description": "URL or fully qualified domain name (FQDN) that was being connected to"
+    },
+    {
+      "Column Name": "LocalIP",
+      "Data Type": "string",
+      "Description": "Source IP, or the IP address where the communication came from"
+    },
+    {
+      "Column Name": "LocalPort",
+      "Data Type": "int",
+      "Description": "TCP port on the local device used during communication"
+    },
+    {
+      "Column Name": "Protocol",
+      "Data Type": "string",
+      "Description": "Protocol used during the communication"
+    },
+    {
+      "Column Name": "LocalIPType",
+      "Data Type": "string",
+      "Description": "Type of IP address, for example Public, Private, Reserved, Loopback, Teredo, FourToSixMapping, and Broadcast"
+    },
+    {
+      "Column Name": "RemoteIPType",
+      "Data Type": "string",
+      "Description": "Type of IP address, for example Public, Private, Reserved, Loopback, Teredo, FourToSixMapping, and Broadcast"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the process (image file) that initiated the event. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "InitiatingProcessMD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileName",
+      "Data Type": "string",
+      "Description": "Name of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileSize",
+      "Data Type": "long",
+      "Description": "Size of the file that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to run the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the process that initiated the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessFolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentFileName",
+      "Data Type": "string",
+      "Description": "Name of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the parent of the process responsible for the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountName",
+      "Data Type": "string",
+      "Description": "User name of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID UPN of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountObjectId",
+      "Data Type": "string",
+      "Description": "Microsoft Entra object ID of the user account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessIntegrityLevel",
+      "Data Type": "string",
+      "Description": "Integrity level of the process that initiated the event. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet download. These integrity levels influence permissions to resources."
+    },
+    {
+      "Column Name": "InitiatingProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Token type indicating the presence or absence of User Access Control (UAC) privilege elevation applied to the process that initiated the event"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AppGuardContainerId",
+      "Data Type": "string",
+      "Description": "Identifier for the virtualized container used by Application Guard to isolate browser activity"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the network event",
+      "SubColumns": [
+        {
+          "Column Name": "direction",
+          "Data Type": "string",
+          "Description": "Direction of the network traffic"
+        },
+        {
+          "Column Name": "trans_id",
+          "Data Type": "string",
+          "Description": "Transaction ID associated with the network event"
+        },
+        {
+          "Column Name": "query",
+          "Data Type": "string",
+          "Description": "Query made during the network event"
+        },
+        {
+          "Column Name": "qclass",
+          "Data Type": "string",
+          "Description": "Query class"
+        },
+        {
+          "Column Name": "qclass_name",
+          "Data Type": "string",
+          "Description": "Name of the query class"
+        },
+        {
+          "Column Name": "qtype",
+          "Data Type": "string",
+          "Description": "Query type"
+        },
+        {
+          "Column Name": "qtype_name",
+          "Data Type": "string",
+          "Description": "Name of the query type"
+        },
+        {
+          "Column Name": "rcode",
+          "Data Type": "string",
+          "Description": "Response code"
+        },
+        {
+          "Column Name": "uid",
+          "Data Type": "string",
+          "Description": "Unique identifier for the event"
+        },
+        {
+          "Column Name": "rcode_name",
+          "Data Type": "string",
+          "Description": "Name of the response code"
+        },
+        {
+          "Column Name": "AA",
+          "Data Type": "boolean",
+          "Description": "Authoritative Answer flag"
+        },
+        {
+          "Column Name": "TC",
+          "Data Type": "boolean",
+          "Description": "Truncated flag"
+        },
+        {
+          "Column Name": "RD",
+          "Data Type": "boolean",
+          "Description": "Recursion Desired flag"
+        },
+        {
+          "Column Name": "RA",
+          "Data Type": "boolean",
+          "Description": "Recursion Available flag"
+        },
+        {
+          "Column Name": "rejected",
+          "Data Type": "boolean",
+          "Description": "Indicates whether the request was rejected"
+        },
+        {
+          "Column Name": "ts",
+          "Data Type": "string",
+          "Description": "Timestamp of the event"
+        },
+        {
+          "Column Name": "rtt",
+          "Data Type": "integer",
+          "Description": "Round-trip time in milliseconds"
+        },
+        {
+          "Column Name": "answers",
+          "Data Type": "array",
+          "Description": "List of answers to the query"
+        },
+        {
+          "Column Name": "TTLs",
+          "Data Type": "array",
+          "Description": "List of Time-To-Live values"
+        },
+        {
+          "Column Name": "Source Mac",
+          "Data Type": "string",
+          "Description": "MAC address of the source"
+        },
+        {
+          "Column Name": "Destination Mac",
+          "Data Type": "string",
+          "Description": "MAC address of the destination"
+        },
+        {
+          "Column Name": "Tcp Flags",
+          "Data Type": "string",
+          "Description": "TCP flags associated with the event"
+        },
+        {
+          "Column Name": "Packet Size",
+          "Data Type": "integer",
+          "Description": "Size of the network packet"
+        },
+        {
+          "Column Name": "version",
+          "Data Type": "string",
+          "Description": "Version of the protocol or event"
+        },
+        {
+          "Column Name": "curve",
+          "Data Type": "string",
+          "Description": "Cryptographic curve used"
+        },
+        {
+          "Column Name": "server_name",
+          "Data Type": "string",
+          "Description": "Name of the server involved in the event"
+        },
+        {
+          "Column Name": "resumed",
+          "Data Type": "boolean",
+          "Description": "Indicates whether the connection was resumed"
+        },
+        {
+          "Column Name": "next_protocol",
+          "Data Type": "string",
+          "Description": "Next protocol used after the event"
+        },
+        {
+          "Column Name": "established",
+          "Data Type": "boolean",
+          "Description": "Indicates whether the connection was established"
+        },
+        {
+          "Column Name": "subject",
+          "Data Type": "string",
+          "Description": "Subject of the certificate or event"
+        },
+        {
+          "Column Name": "issuer",
+          "Data Type": "string",
+          "Description": "Issuer of the certificate"
+        },
+        {
+          "Column Name": "cipher",
+          "Data Type": "string",
+          "Description": "Cipher suite used in the event"
+        },
+        {
+          "Column Name": "ja3",
+          "Data Type": "string",
+          "Description": "JA3 hash of the client fingerprint"
+        },
+        {
+          "Column Name": "ja3s",
+          "Data Type": "string",
+          "Description": "JA3S hash of the server fingerprint"
+        }
+      ]
+    } 
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a2e"
+  },
+  "Table Name": "DeviceNetworkInfo",
+  "Description": "Network properties of devices, including physical adapters, IP and MAC addresses, as well as connected networks and domains",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "NetworkAdapterName",
+      "Data Type": "string",
+      "Description": "Name of the network adapter"
+    },
+    {
+      "Column Name": "MacAddress",
+      "Data Type": "string",
+      "Description": "MAC address of the network adapter"
+    },
+    {
+      "Column Name": "NetworkAdapterType",
+      "Data Type": "string",
+      "Description": "Network adapter type. For the possible values, refer to this enumeration."
+    },
+    {
+      "Column Name": "NetworkAdapterStatus",
+      "Data Type": "string",
+      "Description": "Operational status of the network adapter. For the possible values, refer to this enumeration."
+    },
+    {
+      "Column Name": "TunnelType",
+      "Data Type": "string",
+      "Description": "Tunneling protocol, if the interface is used for this purpose, for example 6to4, Teredo, ISATAP, PPTP, SSTP, and SSH"
+    },
+    {
+      "Column Name": "ConnectedNetworks",
+      "Data Type": "string",
+      "Description": "Networks that the adapter is connected to. Each JSON element in the array contains the network name, category (public, private or domain), a description, and a flag indicating if it's connected publicly to the internet."
+    },
+    {
+      "Column Name": "DnsAddresses",
+      "Data Type": "string",
+      "Description": "DNS server addresses in JSON array format"
+    },
+    {
+      "Column Name": "IPv4Dhcp",
+      "Data Type": "string",
+      "Description": "IPv4 address of DHCP server"
+    },
+    {
+      "Column Name": "IPv6Dhcp",
+      "Data Type": "string",
+      "Description": "IPv6 address of DHCP server"
+    },
+    {
+      "Column Name": "DefaultGateways",
+      "Data Type": "string",
+      "Description": "Default gateway addresses in JSON array format"
+    },
+    {
+      "Column Name": "IPAddresses",
+      "Data Type": "string",
+      "Description": "JSON array containing all the IP addresses assigned to the adapter, along with their respective subnet prefix and IP address space, such as public, private, or link-local"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "NetworkAdapterVendor",
+      "Data Type": "string",
+      "Description": "Name of the manufacturer or vendor of the network adapter"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a2f"
+  },
+  "Table Name": "DeviceProcessEvents",
+  "Description": "Process creation and related events",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details."
+    },
+    {
+      "Column Name": "FileName",
+      "Data Type": "string",
+      "Description": "Name of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "SHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the file that the recorded action was applied to. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "MD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FileSize",
+      "Data Type": "long",
+      "Description": "Size of the file in bytes"
+    },
+    {
+      "Column Name": "ProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the newly created process"
+    },
+    {
+      "Column Name": "ProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the newly created process"
+    },
+    {
+      "Column Name": "ProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the newly created process"
+    },
+    {
+      "Column Name": "ProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the newly created process"
+    },
+    {
+      "Column Name": "ProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the newly created process"
+    },
+    {
+      "Column Name": "ProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the newly created process"
+    },
+    {
+      "Column Name": "ProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the newly created process"
+    },
+    {
+      "Column Name": "ProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to create the new process"
+    },
+    {
+      "Column Name": "ProcessIntegrityLevel",
+      "Data Type": "string",
+      "Description": "Integrity level of the newly created process. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet downloaded. These integrity levels influence permissions to resources."
+    },
+    {
+      "Column Name": "ProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Indicates the type of token elevation applied to the newly created process. Possible values: TokenElevationTypeLimited (restricted), TokenElevationTypeDefault (standard), and TokenElevationTypeFull (elevated)"
+    },
+    {
+      "Column Name": "ProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time the process was created"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account might be shown instead"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account; if the device is registered in Microsoft Entra ID, the Entra ID UPN of the account might be shown instead"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "LogonId",
+      "Data Type": "long",
+      "Description": "Identifier for a logon session. This identifier is unique on the same device only between restarts."
+    },
+    {
+      "Column Name": "InitiatingProcessAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountName",
+      "Data Type": "string",
+      "Description": "User name of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID UPN of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountObjectId",
+      "Data Type": "string",
+      "Description": "Microsoft Entra object ID of the user account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessLogonId",
+      "Data Type": "long",
+      "Description": "Identifier for a logon session of the process that initiated the event. This identifier is unique on the same device only between restarts."
+    },
+    {
+      "Column Name": "InitiatingProcessIntegrityLevel",
+      "Data Type": "string",
+      "Description": "Integrity level of the process that initiated the event. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet download. These integrity levels influence permissions to resources."
+    },
+    {
+      "Column Name": "InitiatingProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Token type indicating the presence or absence of User Access Control (UAC) privilege elevation applied to the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the process (image file) that initiated the event. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "InitiatingProcessMD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileName",
+      "Data Type": "string",
+      "Description": "Name of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileSize",
+      "Data Type": "long",
+      "Description": "Size of the file that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to run the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the process that initiated the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessFolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentFileName",
+      "Data Type": "string",
+      "Description": "Name of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the parent of the process responsible for the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessSignerType",
+      "Data Type": "string",
+      "Description": "Type of file signer of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSignatureStatus",
+      "Data Type": "string",
+      "Description": "Information about the signature status of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AppGuardContainerId",
+      "Data Type": "string",
+      "Description": "Identifier for the virtualized container used by Application Guard to isolate browser activity"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "string",
+      "Description": "Additional information about the event in JSON array format"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a30"
+  },
+  "Table Name": "DeviceRegistryEvents",
+  "Description": "Creation and modification of registry entries",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details."
+    },
+    {
+      "Column Name": "RegistryKey",
+      "Data Type": "string",
+      "Description": "Registry key that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueType",
+      "Data Type": "string",
+      "Description": "Data type, such as binary or string, of the registry value that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueName",
+      "Data Type": "string",
+      "Description": "Name of the registry value that the recorded action was applied to"
+    },
+    {
+      "Column Name": "RegistryValueData",
+      "Data Type": "string",
+      "Description": "Data of the registry value that the recorded action was applied to"
+    },
+    {
+      "Column Name": "PreviousRegistryKey",
+      "Data Type": "string",
+      "Description": "Original registry key of the registry value before it was modified"
+    },
+    {
+      "Column Name": "PreviousRegistryValueName",
+      "Data Type": "string",
+      "Description": "Original name of the registry value before it was modified"
+    },
+    {
+      "Column Name": "PreviousRegistryValueData",
+      "Data Type": "string",
+      "Description": "Original data of the registry value before it was modified"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountName",
+      "Data Type": "string",
+      "Description": "User name of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID user name of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that ran the process responsible for the event; if the device is registered in Microsoft Entra ID, the Entra ID UPN of the account that ran the process responsible for the event might be shown instead"
+    },
+    {
+      "Column Name": "InitiatingProcessAccountObjectId",
+      "Data Type": "string",
+      "Description": "Microsoft Entra object ID of the user account that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA1",
+      "Data Type": "string",
+      "Description": "SHA-1 of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessSHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the process (image file) that initiated the event. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "InitiatingProcessMD5",
+      "Data Type": "string",
+      "Description": "MD5 hash of the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileName",
+      "Data Type": "string",
+      "Description": "Name of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessFileSize",
+      "Data Type": "long",
+      "Description": "Size of the file that ran the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoCompanyName",
+      "Data Type": "string",
+      "Description": "Company name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductName",
+      "Data Type": "string",
+      "Description": "Product name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoProductVersion",
+      "Data Type": "string",
+      "Description": "Product version from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoInternalFileName",
+      "Data Type": "string",
+      "Description": "Internal file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoOriginalFileName",
+      "Data Type": "string",
+      "Description": "Original file name from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessVersionInfoFileDescription",
+      "Data Type": "string",
+      "Description": "Description from the version information of the process (image file) responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCommandLine",
+      "Data Type": "string",
+      "Description": "Command line used to run the process that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the process that initiated the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessFolderPath",
+      "Data Type": "string",
+      "Description": "Folder containing the process (image file) that initiated the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentId",
+      "Data Type": "long",
+      "Description": "Process ID (PID) of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentFileName",
+      "Data Type": "string",
+      "Description": "Name of the parent process that spawned the process responsible for the event"
+    },
+    {
+      "Column Name": "InitiatingProcessParentCreationTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the parent of the process responsible for the event was started"
+    },
+    {
+      "Column Name": "InitiatingProcessIntegrityLevel",
+      "Data Type": "string",
+      "Description": "Integrity level of the process that initiated the event. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet download. These integrity levels influence permissions to resources."
+    },
+    {
+      "Column Name": "InitiatingProcessTokenElevation",
+      "Data Type": "string",
+      "Description": "Token type indicating the presence or absence of User Access Control (UAC) privilege elevation applied to the process that initiated the event"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "long",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AppGuardContainerId",
+      "Data Type": "string",
+      "Description": "Identifier for the virtualized container used by Application Guard to isolate browser activity"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a31"
+  },
+  "Table Name": "DeviceTvmHardwareFirmware",
+  "Description": "Hardware and firmware information of devices as checked by Defender Vulnerability Management",
+  "Table Data": [
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "ComponentType",
+      "Data Type": "string",
+      "Description": "Type of hardware or firmware component"
+    },
+    {
+      "Column Name": "Manufacturer",
+      "Data Type": "string",
+      "Description": "Manufacturer of hardware or firmware component"
+    },
+    {
+      "Column Name": "ComponentName",
+      "Data Type": "string",
+      "Description": "Name of hardware or firmware component"
+    },
+    {
+      "Column Name": "ComponentFamily",
+      "Data Type": "string",
+      "Description": "Component family or class, a grouping of components that have similar features or characteristics as determined by the manufacturer"
+    },
+    {
+      "Column Name": "ComponentVersion",
+      "Data Type": "string",
+      "Description": "Component version (for example, BIOS version)"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "dynamic",
+      "Description": "Additional information about the components in JSON array format"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a32"
+  },
+  "Table Name": "DeviceTvmInfoGathering",
+  "Description": "Defender Vulnerability Management assessment events including configuration and attack surface area states",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "LastSeenTime",
+      "Data Type": "datetime",
+      "Description": "Date and time when the service last saw the device"
+    },
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. This indicates specific operating systems, including variations within the same family, such as Windows 10 and Windows 7."
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "dynamic",
+      "Description": "Additional information about the entity or event"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a33"
+  },
+  "Table Name": "DeviceTvmInfoGatheringKB",
+  "Description": "Metadata for assessment events collected in the DeviceTvmInfogathering table",
+  "Table Data": [
+    {
+      "Column Name": "IgId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the piece of information gathered"
+    },
+    {
+      "Column Name": "FieldName",
+      "Data Type": "string",
+      "Description": "Name of the field where this information appears in the AdditionalFields column of the DeviceTvmInfoGathering table"
+    },
+    {
+      "Column Name": "Description",
+      "Data Type": "string",
+      "Description": "Description of the information gathered"
+    },
+    {
+      "Column Name": "Categories",
+      "Data Type": "dynamic",
+      "Description": "List of categories that the information belongs to, in JSON array format"
+    },
+    {
+      "Column Name": "DataStructure",
+      "Data Type": "string",
+      "Description": "The data structure of the information gathered"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a34"
+  },
+  "Table Name": "DeviceTvmSecureConfigurationAssessment",
+  "Description": "Microsoft Defender Vulnerability Management assessment events, indicating the status of various security configurations on devices",
+  "Table Data": [
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. Indicates specific operating systems, including variations within the same family, such as Windows 11, Windows 10, and Windows 7."
+    },
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the record was generated"
+    },
+    {
+      "Column Name": "ConfigurationId",
+      "Data Type": "string",
+      "Description": "Unique identifier for a specific configuration"
+    },
+    {
+      "Column Name": "ConfigurationCategory",
+      "Data Type": "string",
+      "Description": "Category or grouping to which the configuration belongs: Application, OS, Network, Accounts, Security controls"
+    },
+    {
+      "Column Name": "ConfigurationSubcategory",
+      "Data Type": "string",
+      "Description": "Subcategory or subgrouping to which the configuration belongs. In many cases,  string describes specific capabilities or features."
+    },
+    {
+      "Column Name": "ConfigurationImpact",
+      "Data Type": "real",
+      "Description": "Rated impact of the configuration to the overall configuration score (1-10)"
+    },
+    {
+      "Column Name": "IsCompliant",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the configuration or policy is properly configured"
+    },
+    {
+      "Column Name": "IsApplicable",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the configuration or policy applies to the device"
+    },
+    {
+      "Column Name": "Context",
+      "Data Type": "dynamic",
+      "Description": "Additional contextual information about the configuration or policy"
+    },
+    {
+      "Column Name": "IsExpectedUserImpact",
+      "Data Type": "boolean",
+      "Description": "Indicates whether there will be user impact if the configuration or policy is applied"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a35"
+  },
+  "Table Name": "DeviceTvmSecureConfigurationAssessmentKB",
+  "Description": "Knowledge base of various security configurations used by Microsoft Defender Vulnerability Management to assess devices; includes mappings to various standards and benchmarks",
+  "Table Data": [
+    {
+      "Column Name": "ConfigurationId",
+      "Data Type": "string",
+      "Description": "Unique identifier for a specific configuration"
+    },
+    {
+      "Column Name": "ConfigurationImpact",
+      "Data Type": "real",
+      "Description": "Rated impact of the configuration to the overall configuration score (1-10)"
+    },
+    {
+      "Column Name": "ConfigurationName",
+      "Data Type": "string",
+      "Description": "Display name of the configuration"
+    },
+    {
+      "Column Name": "ConfigurationDescription",
+      "Data Type": "string",
+      "Description": "Description of the configuration"
+    },
+    {
+      "Column Name": "RiskDescription",
+      "Data Type": "string",
+      "Description": "Description of the associated risk"
+    },
+    {
+      "Column Name": "ConfigurationCategory",
+      "Data Type": "string",
+      "Description": "Category or grouping to which the configuration belongs: Application, OS, Network, Accounts, Security controls"
+    },
+    {
+      "Column Name": "ConfigurationSubcategory",
+      "Data Type": "string",
+      "Description": "Subcategory or subgrouping to which the configuration belongs. In many cases, this describes specific capabilities or features."
+    },
+    {
+      "Column Name": "ConfigurationBenchmarks",
+      "Data Type": "dynamic",
+      "Description": "List of industry benchmarks recommending the same or similar configuration"
+    },
+    {
+      "Column Name": "Tags",
+      "Data Type": "dynamic",
+      "Description": "Labels representing various attributes used to identify or categorize a security configuration"
+    },
+    {
+      "Column Name": "RemediationOptions",
+      "Data Type": "string",
+      "Description": "Recommended actions to reduce or address any associated risks"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a36"
+  },
+  "Table Name": "DeviceTvmSoftwareEvidenceBeta",
+  "Description": "Evidence info about where a specific software was detected on a device",
+  "Table Data": [
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "SoftwareVendor",
+      "Data Type": "string",
+      "Description": "Name of the software publisher"
+    },
+    {
+      "Column Name": "SoftwareName",
+      "Data Type": "string",
+      "Description": "Name of the software product"
+    },
+    {
+      "Column Name": "SoftwareVersion",
+      "Data Type": "string",
+      "Description": "Version number of the software product"
+    },
+    {
+      "Column Name": "RegistryPaths",
+      "Data Type": "dynamic",
+      "Description": "Registry paths where evidence indicating the existence of the software on a device was detected"
+    },
+    {
+      "Column Name": "DiskPaths",
+      "Data Type": "dynamic",
+      "Description": "Disk paths where file-level evidence indicating the existence of the software on a device was detected"
+    },
+    {
+      "Column Name": "LastSeenTime",
+      "Data Type": "string",
+      "Description": "Date and time when the device was last seen by this service"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a37"
+  },
+  "Table Name": "DeviceTvmSoftwareInventory",
+  "Description": "Inventory of software installed on devices, including their version information and end-of-support status",
+  "Table Data": [
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. This indicates specific operating systems, including variations within the same family, such as Windows 11, Windows 10 and Windows 7."
+    },
+    {
+      "Column Name": "OSVersion",
+      "Data Type": "string",
+      "Description": "Version of the operating system running on the device"
+    },
+    {
+      "Column Name": "OSArchitecture",
+      "Data Type": "string",
+      "Description": "Architecture of the operating system running on the device"
+    },
+    {
+      "Column Name": "SoftwareVendor",
+      "Data Type": "string",
+      "Description": "Name of the software vendor"
+    },
+    {
+      "Column Name": "SoftwareName",
+      "Data Type": "string",
+      "Description": "Name of the software product"
+    },
+    {
+      "Column Name": "SoftwareVersion",
+      "Data Type": "string",
+      "Description": "Version number of the software product"
+    },
+    {
+      "Column Name": "EndOfSupportStatus",
+      "Data Type": "string",
+      "Description": "Indicates the lifecycle stage of the software product relative to its specified end-of-support (EOS) or end-of-life (EOL) date"
+    },
+    {
+      "Column Name": "EndOfSupportDate",
+      "Data Type": "datetime",
+      "Description": "End-of-support (EOS) or end-of-life (EOL) date of the software product"
+    },
+    {
+      "Column Name": "ProductCodeCpe",
+      "Data Type": "string",
+      "Description": "The standard Common Platform Enumeration (CPE) name of the software product version or 'not available' where there's no CPE"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a38"
+  },
+  "Table Name": "DeviceTvmSoftwareVulnerabilities",
+  "Description": "Software vulnerabilities found on devices and the list of available security updates that address each vulnerability",
+  "Table Data": [
+    {
+      "Column Name": "DeviceId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the device in the service"
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. Indicates specific operating systems, including variations within the same family, such as Windows 11, Windows 10, and Windows 7."
+    },
+    {
+      "Column Name": "OSVersion",
+      "Data Type": "string",
+      "Description": "Version of the operating system running on the device"
+    },
+    {
+      "Column Name": "OSArchitecture",
+      "Data Type": "string",
+      "Description": "Architecture of the operating system running on the device"
+    },
+    {
+      "Column Name": "SoftwareVendor",
+      "Data Type": "string",
+      "Description": "Name of the software publisher"
+    },
+    {
+      "Column Name": "SoftwareName",
+      "Data Type": "string",
+      "Description": "Name of the software product"
+    },
+    {
+      "Column Name": "SoftwareVersion",
+      "Data Type": "string",
+      "Description": "Version number of the software product"
+    },
+    {
+      "Column Name": "CveId",
+      "Data Type": "string",
+      "Description": "Unique identifier assigned to the security vulnerability under the Common Vulnerabilities and Exposures (CVE) system"
+    },
+    {
+      "Column Name": "VulnerabilitySeverityLevel",
+      "Data Type": "string",
+      "Description": "Severity level assigned to the security vulnerability based on the CVSS score and dynamic factors influenced by the threat landscape"
+    },
+    {
+      "Column Name": "RecommendedSecurityUpdate",
+      "Data Type": "string",
+      "Description": "Name or description of the security update provided by the software publisher to address the vulnerability"
+    },
+    {
+      "Column Name": "RecommendedSecurityUpdateId",
+      "Data Type": "string",
+      "Description": "Identifier of the applicable security updates or identifier for the corresponding guidance or knowledge base (KB) articles"
+    },
+    {
+      "Column Name": "CveTags",
+      "Data Type": "dynamic",
+      "Description": "Array of tags relevant to the CVE; example: ZeroDay, NoSecurityUpdate"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a39"
+  },
+  "Table Name": "DeviceTvmSoftwareVulnerabilitiesKB",
+  "Description": "Knowledge base of publicly disclosed vulnerabilities, including whether exploit code is publicly available",
+  "Table Data": [
+    {
+      "Column Name": "CveId",
+      "Data Type": "string",
+      "Description": "Unique identifier assigned to the security vulnerability under the Common Vulnerabilities and Exposures (CVE) system"
+    },
+    {
+      "Column Name": "CvssScore",
+      "Data Type": "string",
+      "Description": "Severity score assigned to the security vulnerability under the Common Vulnerability Scoring System (CVSS)"
+    },
+    {
+      "Column Name": "IsExploitAvailable",
+      "Data Type": "boolean",
+      "Description": "Indicates whether exploit code for the vulnerability is publicly available"
+    },
+    {
+      "Column Name": "VulnerabilitySeverityLevel",
+      "Data Type": "string",
+      "Description": "Severity level assigned to the security vulnerability based on the CVSS score and dynamic factors influenced by the threat landscape"
+    },
+    {
+      "Column Name": "LastModifiedTime",
+      "Data Type": "datetime",
+      "Description": "Date and time the item or related metadata was last modified"
+    },
+    {
+      "Column Name": "PublishedDate",
+      "Data Type": "datetime",
+      "Description": "Date vulnerability was disclosed to the public"
+    },
+    {
+      "Column Name": "VulnerabilityDescription",
+      "Data Type": "string",
+      "Description": "Description of the vulnerability and associated risks"
+    },
+    {
+      "Column Name": "AffectedSoftware",
+      "Data Type": "dynamic",
+      "Description": "List of all software products affected by the vulnerability"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a3a"
+  },
+  "Table Name": "EmailAttachmentInfo",
+  "Description": "Information about files attached to emails",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "NetworkMessageId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email, generated by Microsoft 365"
+    },
+    {
+      "Column Name": "SenderFromAddress",
+      "Data Type": "string",
+      "Description": "Sender email address in the FROM header, which is visible to email recipients on their email clients"
+    },
+    {
+      "Column Name": "SenderDisplayName",
+      "Data Type": "string",
+      "Description": "Name of the sender displayed in the address book, typically a combination of a given or first name, a middle initial, and a last name or surname"
+    },
+    {
+      "Column Name": "SenderObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the sender's account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "RecipientEmailAddress",
+      "Data Type": "string",
+      "Description": "Email address of the recipient, or email address of the recipient after distribution list expansion"
+    },
+    {
+      "Column Name": "RecipientObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email recipient in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "FileName",
+      "Data Type": "string",
+      "Description": "Name of the file that the recorded action was applied to"
+    },
+    {
+      "Column Name": "FileType",
+      "Data Type": "string",
+      "Description": "File extension type"
+    },
+    {
+      "Column Name": "SHA256",
+      "Data Type": "string",
+      "Description": "SHA-256 of the file that the recorded action was applied to. This field is usually not populated â use the SHA1 column when available."
+    },
+    {
+      "Column Name": "FileSize",
+      "Data Type": "long",
+      "Description": "Size of the file in bytes"
+    },
+    {
+      "Column Name": "ThreatTypes",
+      "Data Type": "string",
+      "Description": "Verdict from the email filtering stack on whether the email contains malware, phishing, or other threats"
+    },
+    {
+      "Column Name": "ThreatNames",
+      "Data Type": "string",
+      "Description": "Detection name for malware or other threats found"
+    },
+    {
+      "Column Name": "DetectionMethods",
+      "Data Type": "string",
+      "Description": "Methods used to detect malware, phishing, or other threats found in the email"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a3b"
+  },
+  "Table Name": "EmailEvents",
+  "Description": "Microsoft 365 email events, including email delivery and blocking events",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "NetworkMessageId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email, generated by Microsoft 365"
+    },
+    {
+      "Column Name": "InternetMessageId",
+      "Data Type": "string",
+      "Description": "Public-facing identifier for the email that is set by the sending email system"
+    },
+    {
+      "Column Name": "SenderMailFromAddress",
+      "Data Type": "string",
+      "Description": "Sender email address in the MAIL FROM header, also known as the envelope sender or the Return-Path address"
+    },
+    {
+      "Column Name": "SenderFromAddress",
+      "Data Type": "string",
+      "Description": "Sender email address in the FROM header, which is visible to email recipients on their email clients"
+    },
+    {
+      "Column Name": "SenderDisplayName",
+      "Data Type": "string",
+      "Description": "Name of the sender displayed in the address book, typically a combination of a given or first name, a middle initial, and a last name or surname"
+    },
+    {
+      "Column Name": "SenderObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the sender's account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "SenderMailFromDomain",
+      "Data Type": "string",
+      "Description": "Sender domain in the MAIL FROM header, also known as the envelope sender or the Return-Path address"
+    },
+    {
+      "Column Name": "SenderFromDomain",
+      "Data Type": "string",
+      "Description": "Sender domain in the FROM header, which is visible to email recipients on their email clients"
+    },
+    {
+      "Column Name": "SenderIPv4",
+      "Data Type": "string",
+      "Description": "IPv4 address of the last detected mail server that relayed the message"
+    },
+    {
+      "Column Name": "SenderIPv6",
+      "Data Type": "string",
+      "Description": "IPv6 address of the last detected mail server that relayed the message"
+    },
+    {
+      "Column Name": "RecipientEmailAddress",
+      "Data Type": "string",
+      "Description": "Email address of the recipient, or email address of the recipient after distribution list expansion"
+    },
+    {
+      "Column Name": "RecipientObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email recipient in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "Subject",
+      "Data Type": "string",
+      "Description": "Subject of the email"
+    },
+    {
+      "Column Name": "EmailClusterId",
+      "Data Type": "long",
+      "Description": "Identifier for the group of similar emails clustered based on heuristic analysis of their contents"
+    },
+    {
+      "Column Name": "EmailDirection",
+      "Data Type": "string",
+      "Description": "Direction of the email relative to your network:  Inbound, Outbound, Intra-org"
+    },
+    {
+      "Column Name": "DeliveryAction",
+      "Data Type": "string",
+      "Description": "Delivery action of the email: Delivered, Junked, Blocked, or Replaced"
+    },
+    {
+      "Column Name": "DeliveryLocation",
+      "Data Type": "string",
+      "Description": "Location where the email was delivered: Inbox/Folder, On-premises/External, Junk, Quarantine, Failed, Dropped, Deleted items"
+    },
+    {
+      "Column Name": "ThreatTypes",
+      "Data Type": "string",
+      "Description": "Verdict from the email filtering stack on whether the email contains malware, phishing, or other threats"
+    },
+    {
+      "Column Name": "ThreatNames",
+      "Data Type": "string",
+      "Description": "Detection name for malware or other threats found"
+    },
+    {
+      "Column Name": "DetectionMethods",
+      "Data Type": "string",
+      "Description": "Methods used to detect malware, phishing, or other threats found in the email"
+    },
+    {
+      "Column Name": "ConfidenceLevel",
+      "Data Type": "string",
+      "Description": "List of confidence levels of any spam or phishing verdicts. For spam, this column shows the spam confidence level (SCL), indicating if the email was skipped (-1), found to be not spam (0,1), found to be spam with moderate confidence (5,6), or found to be spam with high confidence (9). For phishing, this column displays whether the confidence level is \"High\" or \"Low\"."
+    },
+    {
+      "Column Name": "BulkComplaintLevel",
+      "Data Type": "int",
+      "Description": "Threshold assigned to email from bulk mailers, a high bulk complaint level (BCL) means the email is more likely to generate complaints, and thus more likely to be spam"
+    },
+    {
+      "Column Name": "EmailAction",
+      "Data Type": "string",
+      "Description": "Final action taken on the email based on filter verdict, policies, and user actions:  Move message to junk mail folder, Add X-header, Modify subject, Redirect message, Delete message, send to quarantine, No action taken, Bcc message"
+    },
+    {
+      "Column Name": "EmailActionPolicy",
+      "Data Type": "string",
+      "Description": "Action policy that took effect: Antispam high-confidence, Antispam, Antispam bulk mail, Antispam phishing, Anti-phishing domain impersonation, Anti-phishing user impersonation, Anti-phishing spoof, Anti-phishing graph impersonation, Antimalware, Safe Attachments, Enterprise Transport Rules (ETR)"
+    },
+    {
+      "Column Name": "EmailActionPolicyGuid",
+      "Data Type": "string",
+      "Description": "Unique identifier for the policy that determined the final mail action"
+    },
+    {
+      "Column Name": "AuthenticationDetails",
+      "Data Type": "string",
+      "Description": "List of pass or fail verdicts by email authentication protocols like DMARC, DKIM, SPF or a combination of multiple authentication types (CompAuth)"
+    },
+    {
+      "Column Name": "AttachmentCount",
+      "Data Type": "int",
+      "Description": "Number of attachments in the email"
+    },
+    {
+      "Column Name": "UrlCount",
+      "Data Type": "int",
+      "Description": "Number of embedded URLs in the email"
+    },
+    {
+      "Column Name": "EmailLanguage",
+      "Data Type": "string",
+      "Description": "Detected language of the email content"
+    },
+    {
+      "Column Name": "Connectors",
+      "Data Type": "string",
+      "Description": "Custom instructions that define organizational mail flow and how the email was routed"
+    },
+    {
+      "Column Name": "OrgLevelAction",
+      "Data Type": "string",
+      "Description": "Action taken on the email in response to matches to a policy defined at the organizational level"
+    },
+    {
+      "Column Name": "OrgLevelPolicy",
+      "Data Type": "string",
+      "Description": "Organizational policy that triggered the action taken on the email"
+    },
+    {
+      "Column Name": "UserLevelAction",
+      "Data Type": "string",
+      "Description": "Action taken on the email in response to matches to a mailbox policy defined by the recipient"
+    },
+    {
+      "Column Name": "UserLevelPolicy",
+      "Data Type": "string",
+      "Description": "End-user mailbox policy that triggered the action taken on the email"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the email event",
+      "SubColumns": [
+        {
+          "Column Name": "TransportRuleGuid",
+          "Data Type": "string",
+          "Description": "GUID of the transport rule applied to the email"
+        },
+        {
+          "Column Name": "ImpersonatedDomain",
+          "Data Type": "string",
+          "Description": "Domain that was impersonated in the email event"
+        }
+      ]
+    },
+    {
+      "Column Name": "LatestDeliveryLocation*",
+      "Data Type": "string",
+      "Description": "Last known location of the email"
+    },
+    {
+      "Column Name": "LatestDeliveryAction*",
+      "Data Type": "string",
+      "Description": "Last known action attempted on an email by the service or by an admin through manual remediation"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a3c"
+  },
+  "Table Name": "EmailPostDeliveryEvents",
+  "Description": "Security events that occur post-delivery, after Microsoft 365 delivers the emails to the recipient mailbox",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "NetworkMessageId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email, generated by Microsoft 365"
+    },
+    {
+      "Column Name": "InternetMessageId",
+      "Data Type": "string",
+      "Description": "Public-facing identifier for the email that is set by the sending email system"
+    },
+    {
+      "Column Name": "Action",
+      "Data Type": "string",
+      "Description": "Action taken on the entity"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event: Manual remediation, Phish ZAP, Malware ZAP"
+    },
+    {
+      "Column Name": "ActionTrigger",
+      "Data Type": "string",
+      "Description": "Indicates whether an action was triggered by an administrator (manually or through approval of a pending automated action), or by some special mechanism, such as a ZAP or Dynamic Delivery"
+    },
+    {
+      "Column Name": "ActionResult",
+      "Data Type": "string",
+      "Description": "Result of the action"
+    },
+    {
+      "Column Name": "RecipientEmailAddress",
+      "Data Type": "string",
+      "Description": "Email address of the recipient, or email address of the recipient after distribution list expansion"
+    },
+    {
+      "Column Name": "DeliveryLocation",
+      "Data Type": "string",
+      "Description": "Location where the email was delivered: Inbox/Folder, On-premises/External, Junk, Quarantine, Failed, Dropped, Deleted items"
+    },
+    {
+      "Column Name": "ThreatTypes",
+      "Data Type": "string",
+      "Description": "Verdict from the email filtering stack on whether the email contains malware, phishing, or other threats"
+    },
+    {
+      "Column Name": "DetectionMethods",
+      "Data Type": "string",
+      "Description": "Methods used to detect malware, phishing, or other threats found in the email"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a3d"
+  },
+  "Table Name": "EmailUrlInfo",
+  "Description": "Information about URLs on emails",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "NetworkMessageId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the email, generated by Microsoft 365"
+    },
+    {
+      "Column Name": "Url",
+      "Data Type": "string",
+      "Description": "Full URL in the email subject, body, or attachment"
+    },
+    {
+      "Column Name": "UrlDomain",
+      "Data Type": "string",
+      "Description": "Domain name or host name of the URL"
+    },
+    {
+      "Column Name": "UrlLocation",
+      "Data Type": "string",
+      "Description": "Indicates which part of the email the URL is located"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the DeviceName and Timestamp columns"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a3e"
+  },
+  "Table Name": "ExposureGraphEdges",
+  "Description": "Microsoft Security Exposure Management exposure graph edge information provides visibility into relationships between entities and assets in the graph",
+  "Table Data": [
+    {
+      "Column Name": "EdgeId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the relationship/edge"
+    },
+    {
+      "Column Name": "EdgeLabel",
+      "Data Type": "string",
+      "Description": "The edge label like \"routes traffic to\""
+    },
+    {
+      "Column Name": "SourceNodeId",
+      "Data Type": "string",
+      "Description": "Node ID of the edge's source"
+    },
+    {
+      "Column Name": "SourceNodeName",
+      "Data Type": "string",
+      "Description": "Source node display name"
+    },
+    {
+      "Column Name": "SourceNodeLabel",
+      "Data Type": "string",
+      "Description": "Source node label"
+    },
+    {
+      "Column Name": "SourceNodeCategories",
+      "Data Type": "dynamic",
+      "Description": "Categories list of the source node in JSON format"
+    },
+    {
+      "Column Name": "TargetNodeId",
+      "Data Type": "string",
+      "Description": "Node ID of the edge's target"
+    },
+    {
+      "Column Name": "TargetNodeName",
+      "Data Type": "string",
+      "Description": "Display name of the target node"
+    },
+    {
+      "Column Name": "TargetNodeLabel",
+      "Data Type": "string",
+      "Description": "Target node label"
+    },
+    {
+      "Column Name": "TargetNodeCategories",
+      "Data Type": "dynamic",
+      "Description": "The categories list of the target node in JSON format"
+    },
+    {
+      "Column Name": "EdgeProperties",
+      "Data Type": "dynamic",
+      "Description": "Optional data relevant for the relationship between the nodes in JSON format"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a3f"
+  },
+  "Table Name": "ExposureGraphNodes",
+  "Description": "Microsoft Security Exposure Management exposure graph node information, about organizational entities and their properties",
+  "Table Data": [
+    {
+      "Column Name": "NodeId",
+      "Data Type": "string",
+      "Description": "Unique node identifier"
+    },
+    {
+      "Column Name": "NodeLabel",
+      "Data Type": "string",
+      "Description": "Node label"
+    },
+    {
+      "Column Name": "NodeName",
+      "Data Type": "string",
+      "Description": "Node display name"
+    },
+    {
+      "Column Name": "Categories",
+      "Data Type": "dynamic",
+      "Description": "Categories of the node in JSON format"
+    },
+    {
+      "Column Name": "NodeProperties",
+      "Data Type": "dynamic",
+      "Description": "Properties of the node, including insights related to the resource, such as whether the resource is exposed to the internet, or vulnerable to remote code execution. Values are JSON formatted raw data (unstructured)."
+    },
+    {
+      "Column Name": "EntityIds",
+      "Data Type": "dynamic",
+      "Description": "All known node identifiers in JSON format"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a40"
+  },
+  "Table Name": "IdentityDirectoryEvents",
+  "Description": "Events involving an on-premises domain controller running Active Directory (AD). This table covers a range of identity-related events and system events on the domain controller.",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "TargetAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that the recorded action was applied to"
+    },
+    {
+      "Column Name": "TargetAccountDisplayName",
+      "Data Type": "string",
+      "Description": "Display name of the account that the recorded action was applied to"
+    },
+    {
+      "Column Name": "TargetDeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device that the recorded action was applied to"
+    },
+    {
+      "Column Name": "DestinationDeviceName",
+      "Data Type": "string",
+      "Description": "Name of the device running the server application that processed the recorded action"
+    },
+    {
+      "Column Name": "DestinationIPAddress",
+      "Data Type": "string",
+      "Description": "IP address of the device running the server application that processed the recorded action"
+    },
+    {
+      "Column Name": "DestinationPort",
+      "Data Type": "int",
+      "Description": "Destination port of the activity"
+    },
+    {
+      "Column Name": "Protocol",
+      "Data Type": "string",
+      "Description": "Protocol used during the communication"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountDisplayName",
+      "Data Type": "string",
+      "Description": "Name of the account user displayed in the address book. Typically a combination of a given or first name, a middle initial, and a last name or surname."
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "IPAddress",
+      "Data Type": "string",
+      "Description": "IP address assigned to the device during communication"
+    },
+    {
+      "Column Name": "Port",
+      "Data Type": "int",
+      "Description": "TCP port used during communication"
+    },
+    {
+      "Column Name": "Location",
+      "Data Type": "string",
+      "Description": "City, country/region, or other geographic location associated with the event"
+    },
+    {
+      "Column Name": "ISP",
+      "Data Type": "string",
+      "Description": "Internet service provider associated with the IP address"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the event"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "dynamic",
+      "Description": "Additional information about the entity or event"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a41"
+  },
+  "Table Name": "IdentityInfo",
+  "Description": "Account information from various sources, including Microsoft Entra ID",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp *",
+      "Data Type": "datetime",
+      "Description": "The date and time that the line was written to the database. This is used when there are multiple lines for each identity, such as when a change is detected, or if 24 hours have passed since the last database line was added."
+    },
+    {
+      "Column Name": "ReportId *",
+      "Data Type": "string",
+      "Description": "Unique identifier for the event"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "OnPremSid",
+      "Data Type": "string",
+      "Description": "On-premises security identifier (SID) of the account"
+    },
+    {
+      "Column Name": "AccountDisplayName",
+      "Data Type": "string",
+      "Description": "Name of the account user displayed in the address book. Typically a combination of a given or first name, a middle initial, and a last name or surname."
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account"
+    },
+    {
+      "Column Name": "AccountDomain *",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "Type *",
+      "Data Type": "string",
+      "Description": "Type of record"
+    },
+    {
+      "Column Name": "DistinguishedName *",
+      "Data Type": "string",
+      "Description": "The user's distinguished name"
+    },
+    {
+      "Column Name": "CloudSid",
+      "Data Type": "string",
+      "Description": "Cloud security identifier of the account"
+    },
+    {
+      "Column Name": "GivenName",
+      "Data Type": "string",
+      "Description": "Given name or first name of the account user"
+    },
+    {
+      "Column Name": "Surname",
+      "Data Type": "string",
+      "Description": "Surname, family name, or last name of the account user"
+    },
+    {
+      "Column Name": "Department",
+      "Data Type": "string",
+      "Description": "Name of the department that the account user belongs to"
+    },
+    {
+      "Column Name": "JobTitle",
+      "Data Type": "string",
+      "Description": "Job title of the account user"
+    },
+    {
+      "Column Name": "EmailAddress",
+      "Data Type": "string",
+      "Description": "SMTP address of the account"
+    },
+    {
+      "Column Name": "SipProxyAddress",
+      "Data Type": "string",
+      "Description": "Voice over IP (VOIP) session initiation protocol (SIP) address of the account"
+    },
+    {
+      "Column Name": "Address",
+      "Data Type": "string",
+      "Description": "Address of the account user"
+    },
+    {
+      "Column Name": "City",
+      "Data Type": "string",
+      "Description": "City where the account user is located"
+    },
+    {
+      "Column Name": "Country",
+      "Data Type": "string",
+      "Description": "Country/Region where the account user is located"
+    },
+    {
+      "Column Name": "IsAccountEnabled",
+      "Data Type": "boolean",
+      "Description": "Indicates whether the account is enabled or not"
+    },
+    {
+      "Column Name": "Manager *",
+      "Data Type": "string",
+      "Description": "The listed manager of the account user"
+    },
+    {
+      "Column Name": "Phone *",
+      "Data Type": "string",
+      "Description": "The listed phone number of the account user"
+    },
+    {
+      "Column Name": "CreatedDateTime *",
+      "Data Type": "datetime",
+      "Description": "Date and time when the account user was created"
+    },
+    {
+      "Column Name": "SourceProvider *",
+      "Data Type": "string",
+      "Description": "The identity's source, such as Microsoft Entra ID, Active Directory, or a hybrid identity synchronized from Active Directory to Azure Active Directory"
+    },
+    {
+      "Column Name": "ChangeSource *",
+      "Data Type": "string",
+      "Description": "Identifies which identity provider or process triggered the addition of the new row. For example, the System-UserPersistence value is used for any rows added by an automated process."
+    },
+    {
+      "Column Name": "Tags *",
+      "Data Type": "dynamic",
+      "Description": "Tags assigned to the account user by Defender for Identity"
+    },
+    {
+      "Column Name": "AssignedRoles *",
+      "Data Type": "dynamic",
+      "Description": "For identities from Microsoft Entra-only, the roles assigned to the account user"
+    },
+    {
+      "Column Name": "TenantId",
+      "Data Type": "string",
+      "Description": "Unique identifier representing your organization's instance of Microsoft Entra ID"
+    },
+    {
+      "Column Name": "SourceSystem *",
+      "Data Type": "string",
+      "Description": "The source system for the record"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a42"
+  },
+  "Table Name": "IdentityLogonEvents",
+  "Description": "Authentication events on Active Directory and Microsoft online services",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "LogonType",
+      "Data Type": "string",
+      "Description": "Type of logon session. For more information, see Supported logon types."
+    },
+    {
+      "Column Name": "Protocol",
+      "Data Type": "string",
+      "Description": "Network protocol used"
+    },
+    {
+      "Column Name": "FailureReason",
+      "Data Type": "string",
+      "Description": "Information explaining why the recorded action failed"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountDisplayName",
+      "Data Type": "string",
+      "Description": "Name of the account user displayed in the address book. Typically a combination of a given or first name, a middle initial, and a last name or surname."
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "DeviceType",
+      "Data Type": "string",
+      "Description": "Type of device based on purpose and functionality, such as network device, workstation, server, mobile, gaming console, or printer"
+    },
+    {
+      "Column Name": "OSPlatform",
+      "Data Type": "string",
+      "Description": "Platform of the operating system running on the device. This indicates specific operating systems, including variations within the same family, such as Windows 11, Windows 10 and Windows 7."
+    },
+    {
+      "Column Name": "IPAddress",
+      "Data Type": "string",
+      "Description": "IP address assigned to the endpoint and used during related network communications"
+    },
+    {
+      "Column Name": "Port",
+      "Data Type": "int",
+      "Description": "TCP port used during communication"
+    },
+    {
+      "Column Name": "DestinationDeviceName",
+      "Data Type": "string",
+      "Description": "Name of the device running the server application that processed the recorded action"
+    },
+    {
+      "Column Name": "DestinationIPAddress",
+      "Data Type": "string",
+      "Description": "IP address of the device running the server application that processed the recorded action"
+    },
+    {
+      "Column Name": "DestinationPort",
+      "Data Type": "int",
+      "Description": "Destination port of related network communications"
+    },
+    {
+      "Column Name": "TargetDeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device that the recorded action was applied to"
+    },
+    {
+      "Column Name": "TargetAccountDisplayName",
+      "Data Type": "string",
+      "Description": "Display name of the account that the recorded action was applied to"
+    },
+    {
+      "Column Name": "Location",
+      "Data Type": "string",
+      "Description": "City, country/region, or other geographic location associated with the event"
+    },
+    {
+      "Column Name": "Isp",
+      "Data Type": "string",
+      "Description": "Internet service provider (ISP) associated with the endpoint IP address"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the event"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "object",
+      "Description": "Additional information about the identity logon event",
+      "SubColumns": [
+        {
+          "Column Name": "ACTOR.ENTITY_USER",
+          "Data Type": "string",
+          "Description": "User entity associated with the actor"
+        },
+        {
+          "Column Name": "ACTOR.ALIAS",
+          "Data Type": "string",
+          "Description": "Alias of the actor"
+        },
+        {
+          "Column Name": "ARG.CLOUD_SERVICE",
+          "Data Type": "string",
+          "Description": "Cloud service used in the argument"
+        },
+        {
+          "Column Name": "Pass-through authentication",
+          "Data Type": "boolean",
+          "Description": "Indicates if pass-through authentication was used"
+        },
+        {
+          "Column Name": "Request ID",
+          "Data Type": "string",
+          "Description": "Identifier of the request"
+        },
+        {
+          "Column Name": "TARGET_OBJECT.ALIAS",
+          "Data Type": "string",
+          "Description": "Alias of the target object"
+        },
+        {
+          "Column Name": "TO.CLOUD_SERVICE",
+          "Data Type": "string",
+          "Description": "Cloud service used in the target object"
+        },
+        {
+          "Column Name": "TARGET_OBJECT.ENTITY_USER",
+          "Data Type": "string",
+          "Description": "User entity associated with the target object"
+        },
+        {
+          "Column Name": "TARGET_OBJECT.USER",
+          "Data Type": "string",
+          "Description": "User associated with the target object"
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a43"
+  },
+  "Table Name": "IdentityQueryEvents",
+  "Description": "Queries for Active Directory objects, such as users, groups, devices, and domains",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "Date and time when the event was recorded"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Type of activity that triggered the event. See the in-portal schema reference for details"
+    },
+    {
+      "Column Name": "Application",
+      "Data Type": "string",
+      "Description": "Application that performed the recorded action"
+    },
+    {
+      "Column Name": "QueryType",
+      "Data Type": "string",
+      "Description": "Type of query, such as QueryGroup, QueryUser, or EnumerateUsers"
+    },
+    {
+      "Column Name": "QueryTarget",
+      "Data Type": "string",
+      "Description": "Name of user, group, device, domain, or any other entity type being queried"
+    },
+    {
+      "Column Name": "Query",
+      "Data Type": "string",
+      "Description": "String used to run the query"
+    },
+    {
+      "Column Name": "Protocol",
+      "Data Type": "string",
+      "Description": "Protocol used during the communication"
+    },
+    {
+      "Column Name": "AccountName",
+      "Data Type": "string",
+      "Description": "User name of the account"
+    },
+    {
+      "Column Name": "AccountDomain",
+      "Data Type": "string",
+      "Description": "Domain of the account"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account"
+    },
+    {
+      "Column Name": "AccountSid",
+      "Data Type": "string",
+      "Description": "Security Identifier (SID) of the account"
+    },
+    {
+      "Column Name": "AccountObjectId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the account in Microsoft Entra ID"
+    },
+    {
+      "Column Name": "AccountDisplayName",
+      "Data Type": "string",
+      "Description": "Name of the account user displayed in the address book. Typically a combination of a given or first name, a middle initial, and a last name or surname."
+    },
+    {
+      "Column Name": "DeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device"
+    },
+    {
+      "Column Name": "IPAddress",
+      "Data Type": "string",
+      "Description": "IP address assigned to the endpoint and used during related network communications"
+    },
+    {
+      "Column Name": "Port",
+      "Data Type": "int",
+      "Description": "TCP port used during communication"
+    },
+    {
+      "Column Name": "DestinationDeviceName",
+      "Data Type": "string",
+      "Description": "Name of the device running the server application that processed the recorded action"
+    },
+    {
+      "Column Name": "DestinationIPAddress",
+      "Data Type": "string",
+      "Description": "IP address of the device running the server application that processed the recorded action"
+    },
+    {
+      "Column Name": "DestinationPort",
+      "Data Type": "int",
+      "Description": "Destination port of related network communications"
+    },
+    {
+      "Column Name": "TargetDeviceName",
+      "Data Type": "string",
+      "Description": "Fully qualified domain name (FQDN) of the device that the recorded action was applied to"
+    },
+    {
+      "Column Name": "TargetAccountUpn",
+      "Data Type": "string",
+      "Description": "User principal name (UPN) of the account that the recorded action was applied to"
+    },
+    {
+      "Column Name": "TargetAccountDisplayName",
+      "Data Type": "string",
+      "Description": "Display name of the account that the recorded action was applied to"
+    },
+    {
+      "Column Name": "Location",
+      "Data Type": "string",
+      "Description": "City, country/region, or other geographic location associated with the event"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "Unique identifier for the event"
+    },
+    {
+      "Column Name": "AdditionalFields",
+      "Data Type": "dynamic",
+      "Description": "Additional information about the entity or event"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663e5587426850777a3e0a44"
+  },
+  "Table Name": "UrlClickEvents",
+  "Description": "Safe Links clicks from email messages, Teams, and Office 365 apps",
+  "Table Data": [
+    {
+      "Column Name": "Timestamp",
+      "Data Type": "datetime",
+      "Description": "The date and time when the user clicked on the link"
+    },
+    {
+      "Column Name": "Url",
+      "Data Type": "string",
+      "Description": "The full URL that was clicked on by the user"
+    },
+    {
+      "Column Name": "ActionType",
+      "Data Type": "string",
+      "Description": "Indicates whether the click was allowed or blocked by Safe Links or blocked due to a tenant policy, for instance, from Tenant Allow Block list"
+    },
+    {
+      "Column Name": "AccountUpn",
+      "Data Type": "string",
+      "Description": "User Principal Name of the account that clicked on the link"
+    },
+    {
+      "Column Name": "Workload",
+      "Data Type": "string",
+      "Description": "The application from which the user clicked on the link, with the values being Email, Office, and Teams"
+    },
+    {
+      "Column Name": "NetworkMessageId",
+      "Data Type": "string",
+      "Description": "The unique identifier for the email that contains the clicked link, generated by Microsoft 365"
+    },
+    {
+      "Column Name": "ThreatTypes",
+      "Data Type": "string",
+      "Description": "Verdict at the time of click, which tells whether the URL led to malware, phish or other threats"
+    },
+    {
+      "Column Name": "DetectionMethods",
+      "Data Type": "string",
+      "Description": "Detection technology that was used to identify the threat at the time of click"
+    },
+    {
+      "Column Name": "IPAddress",
+      "Data Type": "string",
+      "Description": "Public IP address of the device from which the user clicked on the link"
+    },
+    {
+      "Column Name": "IsClickedThrough",
+      "Data Type": "bool",
+      "Description": "Indicates whether the user was able to click through to the original URL (1) or not (0)"
+    },
+    {
+      "Column Name": "UrlChain",
+      "Data Type": "string",
+      "Description": "For scenarios involving redirections, it includes URLs present in the redirection chain"
+    },
+    {
+      "Column Name": "ReportId",
+      "Data Type": "string",
+      "Description": "The unique identifier for a click event. For clickthrough scenarios, report ID would have same value, and therefore it should be used to correlate a click event."
+    }
+  ]
+}]
